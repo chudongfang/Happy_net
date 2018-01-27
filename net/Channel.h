@@ -17,11 +17,15 @@ class EventLoop;
 class Channel : boost::noncopyable
 {
   public:
-    typedef boost::function<void()> EventCallback;
+    typedef boost::function<void()> EventCallback; //回调函数
     Channel(EventLoop * loop,int fd);
     void handleEvent();
     void setReadCallback(const EventCallback& cb)
     {readCallback_  = cb; }
+    int fd() const {return fd_;}
+    int events() const {return events_; }
+    void set_revents(int revt) { revents_ = revt; }
+    
     void setWriteCallback(const EventCallback& cb)
     {writeCallback_ = cb; }
     void setErrorCallback(const EventCallback& cb)
@@ -33,8 +37,8 @@ class Channel : boost::noncopyable
     static const int kReadEvent;
     static const int kWriteEvent;
 
-    EventLoop* loop_;
-    const int  fd_;
+    EventLoop* loop_;    //Channel对应的Eventloop 
+    const int  fd_;    
     int        events_;
     int        revents_;
     int        index_;
@@ -45,7 +49,6 @@ class Channel : boost::noncopyable
     EventCallback readCallback_;
     EventCallback writeCallback_;
     EventCallback errorCallback_;
-
 
 };
 
