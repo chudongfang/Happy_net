@@ -1,10 +1,12 @@
 CXXFLAGS = -O0 -g  -Wall -I ../.. -pthread
 LDFLAGS = -lpthread
 
-BASE_SRC = ../../logging/Logging.cc ../../logging/LogStream.cc ../../thread/Thread.cc ../../datetime/Timestamp.cc
+#BASE_SRC = ../../muduo-master/muduo/base/Logging.cc ../../muduo-master/muduo/base/LogStream.cc ../../muduo-master/muduo/base/Thread.cc ../../muduo-master/muduo/base/Timestamp.cc
 
+BASE_SRC = 
 LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc
 
+BINARIES = test1
 all: $(BINARIES)
 
 

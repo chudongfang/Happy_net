@@ -7,7 +7,6 @@
 
 #ifndef _EVENTLOOP_H
 #define _EVENTLOOP_H
-#include "../base/Thread"
 
 #include<boost/scoped_ptr.hpp>
 #include<vector>
