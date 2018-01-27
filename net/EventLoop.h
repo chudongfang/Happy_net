@@ -20,7 +20,7 @@ class Poller;
 
 class EventLoop : boost::noncopyable
 {
-  public:
+public:
     EventLoop();//structure function
     ~EventLoop();
     void loop();
@@ -34,14 +34,17 @@ class EventLoop : boost::noncopyable
         }
     }
     bool isInLoopThread() const {return threadId_ == CurrentThread::tid();}
-  private:
-    void abortNotInLoopThread();
-    typedef std::vector<Channel*> ChannelList;
+  
+    
+private:
+    void abortNotInLoopThread(); //判定是否在线程中
+
+    typedef std::vector<Channel*> ChannelList; //存储Channel
     bool looping_;
     bool quit_;
-    const pid_t threadId_;
-    boost::scoped_ptr<Poller> poller_;
-    ChannelList activeChannels;
+    const pid_t threadId_;  //线程ID
+    boost::scoped_ptr<Poller> poller_; //禁止拷贝与赋值的智能指针
+    ChannelList activeChannels; //活动Channel列表 
 
 };
 

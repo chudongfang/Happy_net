@@ -41,7 +41,7 @@ class Channel : boost::noncopyable
     const int  fd_;    
     int        events_;
     int        revents_;
-    int        index_;
+    int        index_;  //引索
     
     // 定义一些回调函数
     
