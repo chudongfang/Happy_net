@@ -1,14 +1,21 @@
+
+#编译参数
 CXXFLAGS = -O0 -g  -Wall -I ../.. -pthread
+
+#链接的库
 LDFLAGS = -lpthread
 
-#BASE_SRC = ../../muduo-master/muduo/base/Logging.cc ../../muduo-master/muduo/base/LogStream.cc ../../muduo-master/muduo/base/Thread.cc ../../muduo-master/muduo/base/Timestamp.cc
-
+#基层依赖
 BASE_SRC = ../base/thread/Thread.cc 
+
+#编译文件
 LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc
 
+#目标程序
 BINARIES = test1
-all: $(BINARIES)
 
+
+all: $(BINARIES)
 
 $(BINARIES):
 	g++ $(CXXFLAGS) -o $@ $(LIB_SRC) $(BASE_SRC) $(filter %.cc,$^) $(LDFLAGS)
