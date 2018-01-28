@@ -5,7 +5,7 @@
 #include <assert.h>
 using namespace Happy;
 __thread EventLoop* t_loopInThisThread =0 ;
-const int kPollTimeMs = 10000;
+const int kPollTimeMs = 1; //poll等待秒数
 EventLoop::EventLoop()
     :looping_(false),
     quit_(false),
