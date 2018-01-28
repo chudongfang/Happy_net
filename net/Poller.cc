@@ -12,6 +12,7 @@
 #include "Poller.h"
 #include "Channel.h"
 
+#include <iostream>
 #include <assert.h>
 #include <poll.h>
 using namespace Happy;
@@ -33,16 +34,16 @@ int  Poller::poll(int timeoutMs, ChannelList * activeChannels)
     //Timestap now(Timestap::now());
     if(numEvents>0)
     {
-        cout << numEvents<<" events happended";
+        std::cout << numEvents<<" events happended";
         fillActiveChannels(numEvents,activeChannels);
     }
     else if(numEvents == 0 )
     {
-        cout << "Nothing happended"<<endl;
+        std::cout << "Nothing happended"<<std::endl;
     }
     else 
     {
-        cout <<"Poller::poll()"<<endl;
+        std::cout <<"Poller::poll()"<<std::endl;
     }
     return 0;
 }
@@ -57,7 +58,7 @@ void Poller::fillActiveChannels(int numEvents,
         if( it->revents > 0)
         {
             --numEvents;
-            ChannelMap::const_iterator ch = Channels_.find(it->fd);
+            ChannelMap::const_iterator ch = channels_.find(it->fd);
             assert(ch != channels_.end()); // 验证对应的fd是否存在
             Channel* channel = ch->second;    
             assert(channel -> fd() == it->fd);  //验证fd是否对应
@@ -71,11 +72,11 @@ void Poller::fillActiveChannels(int numEvents,
 void Poller::updateChannel(Channel* channel)
 {
     assertInLoopThread();
-    cout << "fd = " <<channel->fd()<<" events = "<<channel->events();
+    std::cout << "fd = " <<channel->fd()<<" events = "<<channel->events()<<std::endl;
     if(channel->index() < 0)
     {
         //一个新的fd,添加到pollfds_
-        assert(Channels_.find(channel->fd())  == channels_.end());
+        assert(channels_.find(channel->fd())  == channels_.end());
         struct pollfd pfd;
         pfd.fd = channel->fd();
         pfd.events = static_cast<short>(channel->events());
@@ -91,7 +92,7 @@ void Poller::updateChannel(Channel* channel)
         assert(channels_[channel->fd()] == channel);
         int idx = channel->index();
         assert(0 <= idx && idx < static_cast<int>(pollfds_.size()));
-        struct pollfd & pfd = pollfd_[idx];
+        struct pollfd & pfd = pollfds_[idx];
         assert(pfd.fd == channel->fd() || pfd.fd == -1);
         pfd.events = static_cast<short>(channel->events());
         pfd.revents = 0;

@@ -14,25 +14,40 @@ namespace Happy
 {
 class EventLoop;
 
-class Channel : boost::noncopyable
+//class Channel : boost::noncopyable
+class Channel
 {
-  public:
+public:
     typedef boost::function<void()> EventCallback; //回调函数
     Channel(EventLoop * loop,int fd);
+    
     void handleEvent();
-    void setReadCallback(const EventCallback& cb)
-    {readCallback_  = cb; }
+    
+    //获取变量值 
     int fd() const {return fd_;}
     int events() const {return events_; }
+    int index() const {return index_;}
+    EventLoop * ownerLoop() {return loop_;}
+    
+    //设置变量值
+    void set_index(int idx) {index_ = idx;} 
     void set_revents(int revt) { revents_ = revt; }
     
+    //设置回调函数
+    void setReadCallback(const EventCallback& cb)
+    {readCallback_  = cb; }
     void setWriteCallback(const EventCallback& cb)
     {writeCallback_ = cb; }
     void setErrorCallback(const EventCallback& cb)
     {errorCallback_ = cb; }
- private:
+     
+    bool isNoneEvent() const {return events_ == kNoneEvent;}
+    
+     
+private:
+    
     void update();
-
+    
     static const int kNoneEvent;
     static const int kReadEvent;
     static const int kWriteEvent;
@@ -54,7 +69,7 @@ class Channel : boost::noncopyable
 
 
 
-};
+}
 
 
 

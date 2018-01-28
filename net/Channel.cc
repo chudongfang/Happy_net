@@ -1,6 +1,5 @@
 #include "Channel.h"
 #include "EventLoop.h"
-#include "logging/Logging.h"
 
 #include<sstream>
 #include<poll.h>
@@ -31,7 +30,7 @@ void Channel::handleEvent()
 {
     if(revents_ & POLLNVAL)
     {
-        cout <<"POLLNVAL"<<endl;
+       // std::cout <<"POLLNVAL"<<std::endl;
     }
     if(revents_ & (POLLERR | POLLNVAL) ){
         if(errorCallback_) errorCallback_();
@@ -50,13 +49,7 @@ void Channel::handleEvent()
 
 
 
-}
 
-
-
-
-
-}
 
 
 

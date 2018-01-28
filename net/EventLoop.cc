@@ -9,12 +9,12 @@ const int kPollTimeMs = 10000;
 EventLoop::EventLoop()
     :looping_(false),
     quit_(false),
-    threadId_(CurrentThread::tid());
+    threadId_(0), //FIXME use the thread
     poller_(new Poller(this))
 
 {
     //FIXME should use the log 
-    cout <<"EventLoop create " << this << "in thread "<<threadId_;
+    //std::cout <<"EventLoop create " << this << "in thread "<<threadId<<std::endl_;
     if(t_loopInThisThread)
     {
         
@@ -41,7 +41,8 @@ void EventLoop::loop()
 
     while(!quit_)
     {
-        activeChannels.clear();
+        debug("Loop start!"); 
+        activeChannels_.clear();
         poller_->poll(kPollTimeMs,&activeChannels_);  //利用poll来获取 activeChannels
         for(ChannelList::iterator it = activeChannels_.begin();
             it != activeChannels_.end() ; ++it)
@@ -49,11 +50,10 @@ void EventLoop::loop()
             (*it) -> handleEvent();
         }
     }
-    cout <<" Loop Stop "<<endl;
+    //FIXME use the log
+    //std::cout <<" Loop Stop "<<std::endl;
     looping_ = false;
 }
-
-
 void EventLoop::quit()
 {
     quit_ = true;
@@ -61,7 +61,7 @@ void EventLoop::quit()
 
 void EventLoop::updateChannel(Channel * channel )
 {
-    assert(channel->ownerLoop == this);
+    assert(channel->ownerLoop() == this);
     assertInLoopThread();
     poller_ -> updateChannel(channel);
 }
@@ -69,7 +69,10 @@ void EventLoop::updateChannel(Channel * channel )
 //void EventLoop::
 
 
-
+void EventLoop::debug(  std::string  const  s)
+{
+    std::cout<< s << std::endl;
+}
 
 
 
