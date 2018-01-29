@@ -1,6 +1,6 @@
 
 #编译参数
-CXXFLAGS = -O0 -g -std=c++11 -Wall -I ../base/ -pthread
+CXXFLAGS = -O0 -g -std=c++11 -Wall -I ../.. -pthread
 
 #链接的库
 LDFLAGS = -lpthread
@@ -9,7 +9,7 @@ LDFLAGS = -lpthread
 BASE_SRC =  
 
 #编译文件
-LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc
+LIB_SRC = ./Thread.h
 
 #目标程序
 BINARIES = test1

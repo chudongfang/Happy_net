@@ -2,6 +2,7 @@
 #include "Poller.h"
 #include "EventLoop.h"
 
+#include <iostream>
 #include <assert.h>
 using namespace Happy;
 
@@ -16,7 +17,7 @@ EventLoop::EventLoop()
 
 {
     //FIXME should use the log 
-    //std::cout <<"EventLoop create " << this << "in thread "<<threadId<<std::endl_;
+    std::cout <<"EventLoop create " << this << "in thread "<<threadId_<<std::endl;
     if(t_loopInThisThread)
     {
         
@@ -53,7 +54,7 @@ void EventLoop::loop()
         }
     }
     //FIXME use the log
-    //std::cout <<" Loop Stop "<<std::endl;
+    std::cout <<" Loop Stop "<<std::endl;
     looping_ = false;
 }
 void EventLoop::quit()
@@ -68,9 +69,8 @@ void EventLoop::updateChannel(Channel * channel )
     poller_ -> updateChannel(channel);
 }
 
-//void EventLoop::
 
-
+//debug
 void EventLoop::debug(  std::string  const  s)
 {
     std::cout<< s << std::endl;

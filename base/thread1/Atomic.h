@@ -1,16 +1,17 @@
-// excerpts from http://code.google.com/p/muduo/
-//
-// Use of this source code is governed by a BSD-style license
-// that can be found in the License file.
-//
-// Author: Shuo Chen (giantchen at gmail dot com)
+/*************************************************************************
+	> File Name: Atomic.h
+	> Author: 
+	> Mail: 
+	> Created Time: 2018年01月29日 星期一 01时03分40秒
+ ************************************************************************/
 
-#ifndef MUDUO_BASE_ATOMIC_H
-#define MUDUO_BASE_ATOMIC_H
-
+#ifndef _ATOMIC_H
+#define _ATOMIC_H
 #include <boost/noncopyable.hpp>
 #include <stdint.h>
 
+
+// learn from muduo
 namespace Happy
 {
 
@@ -25,17 +26,6 @@ class AtomicIntegerT : boost::noncopyable
   {
   }
 
-  // uncomment if you need copying and assignment
-  //
-  // AtomicIntegerT(const AtomicIntegerT& that)
-  //   : value_(that.get())
-  // {}
-  //
-  // AtomicIntegerT& operator=(const AtomicIntegerT& that)
-  // {
-  //   getAndSet(that.get());
-  //   return *this;
-  // }
 
   T get() const
   {
@@ -86,4 +76,8 @@ typedef detail::AtomicIntegerT<int32_t> AtomicInt32;
 typedef detail::AtomicIntegerT<int64_t> AtomicInt64;
 }
 
-#endif  // MUDUO_BASE_ATOMIC_H
+
+
+
+
+#endif

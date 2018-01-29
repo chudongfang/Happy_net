@@ -7,10 +7,12 @@
 
 #ifndef _EVENTLOOP_H
 #define _EVENTLOOP_H
-#include<boost/scoped_ptr.hpp>
-#include<vector>
-#include<string>
-#include<iostream>
+#include <boost/scoped_ptr.hpp>
+#include <vector>
+#include <string>
+#include <iostream>
+
+#include "thread1/CurrentThread.h"
 
 namespace Happy
 {
@@ -34,9 +36,11 @@ public:
             abortNotInLoopThread();
         }*/
     }
-    //bool isInLoopThread() const {return threadId_ == CurrentThread::tid();}
+    bool isInLoopThread() const {return threadId_ == CurrentThread::tid();}
     void debug(std::string s);
     
+
+
 
 private:
     void abortNotInLoopThread(); //判定是否在线程中
