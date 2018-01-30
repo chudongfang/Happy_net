@@ -12,7 +12,7 @@ BASE_SRC = ../base/thread1/CurrentThread.cc
 LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc
 
 #目标程序
-BINARIES = test1
+BINARIES = test2
 
 
 all: $(BINARIES)
@@ -23,4 +23,4 @@ $(BINARIES):
 clean:
 	rm -f $(BINARIES) core
 
-test1: test1.cc
+test2: test2.cc

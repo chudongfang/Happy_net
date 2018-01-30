@@ -28,7 +28,7 @@ static int createEventfd()
 
 
 
-const int kPollTimeMs = 1000; //poll等待秒数
+const int kPollTimeMs = 100000; //poll等待秒数
 EventLoop::EventLoop()
     :looping_(false),
     quit_(false),
