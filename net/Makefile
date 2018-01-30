@@ -5,8 +5,8 @@ CXXFLAGS = -O0 -g -std=c++11 -Wall -I ../base/ -pthread
 #链接的库
 LDFLAGS = -lpthread
 
-#基层依赖
-BASE_SRC =  
+#依赖文件 包含头文件对应的.cc文件
+BASE_SRC = ../base/thread1/CurrentThread.cc 
 
 #编译文件
 LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc

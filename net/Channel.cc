@@ -6,6 +6,8 @@
 
 
 using namespace Happy;
+
+//fd的状态
 const int Channel::kNoneEvent = 0;
 const int Channel::kReadEvent = POLLIN | POLLPRI;
 const int Channel::kWriteEvent = POLLOUT;
@@ -22,7 +24,8 @@ Channel::Channel(EventLoop* loop, int fdArg)
 
 void Channel::update()
 {
-    loop_->updateChannel(this);
+    loop_->updateChannel(this);//use the poller
+
 }
 
 

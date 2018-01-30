@@ -69,6 +69,8 @@ void Poller::fillActiveChannels(int numEvents,
 }
 
 
+
+//添加或修改pollfds_的信息,把Channel中的变化更新到poll中
 void Poller::updateChannel(Channel* channel)
 {
     assertInLoopThread();
@@ -90,6 +92,7 @@ void Poller::updateChannel(Channel* channel)
         //fd已经存在
         assert(channels_.find(channel->fd()) != channels_.end() );
         assert(channels_[channel->fd()] == channel);
+        
         int idx = channel->index();
         assert(0 <= idx && idx < static_cast<int>(pollfds_.size()));
         struct pollfd & pfd = pollfds_[idx];

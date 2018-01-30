@@ -17,7 +17,6 @@
 namespace Happy
 {
 
-
 namespace CurrentThread
 {
   pid_t tid();

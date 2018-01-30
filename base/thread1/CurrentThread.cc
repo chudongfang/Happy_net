@@ -1,7 +1,7 @@
 #include "CurrentThread.h"
 
 
-namespace muduo
+namespace Happy
 {
 namespace CurrentThread
 {
@@ -10,6 +10,17 @@ namespace CurrentThread
 }
 
 
+
+namespace
+{
+__thread pid_t t_cachedTid = 0;
+
+pid_t gettid()
+{
+  return static_cast<pid_t>(::syscall(SYS_gettid));
+}
+
+}
 using namespace Happy;
 
 pid_t CurrentThread::tid()

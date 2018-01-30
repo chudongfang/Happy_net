@@ -40,9 +40,12 @@ public:
     {writeCallback_ = cb; }
     void setErrorCallback(const EventCallback& cb)
     {errorCallback_ = cb; }
-     
-    bool isNoneEvent() const {return events_ == kNoneEvent;}
     
+    //修改fd为可读
+    void enableReading() { events_ |= kReadEvent; update(); }
+
+    bool isNoneEvent() const {return events_ == kNoneEvent;}
+     
      
 private:
     
