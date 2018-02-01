@@ -9,10 +9,10 @@ LDFLAGS = -lpthread
 BASE_SRC = ../base/thread1/CurrentThread.cc 
 
 #编译文件
-LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc
+LIB_SRC = ./Channel.cc ./EventLoop.cc ./Poller.cc ./Acceptor.cc ./Socket.cc ./Socket_Base.cc ./InetAddress.cc
 
 #目标程序
-BINARIES = test2
+BINARIES = test_Acceptor
 
 
 all: $(BINARIES)
@@ -23,4 +23,4 @@ $(BINARIES):
 clean:
 	rm -f $(BINARIES) core
 
-test2: test2.cc
+test_Acceptor: test_Acceptor.cc

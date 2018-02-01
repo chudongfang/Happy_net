@@ -22,7 +22,7 @@ public:
      :sockfd_(sockfd)
     {}
     ~Socket();
-    int fd() const   { return fd; }
+    int fd() const   { return sockfd_; }
     void bindAddress(const InetAddress& localaddr);
 
     void listen();
