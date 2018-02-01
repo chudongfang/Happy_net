@@ -54,7 +54,6 @@ private:
                     return; 
                 }
                 task();
-    
             }
         }
     }
