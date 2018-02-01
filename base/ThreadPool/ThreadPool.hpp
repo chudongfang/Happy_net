@@ -72,10 +72,10 @@ private:
     }
 
 private:
-    std::list< std::shared_ptr<std:thread> > threadgroup_;
+
+    std::list<std::shared_ptr<std::thread>> threadgroup_;
     SyncQueue<Task> queue_;
-    atomic_bool running_;
+    std::atomic_bool running_;
     std::once_flag flag_;
 
-
-}
+};

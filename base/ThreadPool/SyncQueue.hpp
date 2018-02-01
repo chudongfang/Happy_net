@@ -1,10 +1,9 @@
 #include<list>
 #include<mutex>
 #include<thread>
-#include<condition_vatiable>
+#include<condition_variable>
 #include<iostream>
 
-using namespace std;
 
 template <typename T>
 
@@ -92,10 +91,10 @@ private:
 
     bool NotFull() const 
     {
-        bool full = queue_.size()  > = maxSize_;
+        bool full = queue_.size()  >= maxSize_;
         if(full)
         {
-            cout << "is full , please wait! "<<endl;
+            std::cout << "is full , please wait! "<<std::endl;
         }
         return !full;
     }
@@ -105,7 +104,7 @@ private:
         bool empty = queue_.empty();
         if(empty)
         {
-            cout <<"empty , need wait !" << this_thread::get_id() << endl;
+            std::cout <<"empty , need wait !" << std::this_thread::get_id() << std::endl;
         }
 
         return !empty;
@@ -117,7 +116,7 @@ private:
     void Add(F&&x)
     {
         std::unique_lock<std::mutex> locker(mutex_);
-        notFull_.wait(locker, [this]{return needStop_ || notFull()} );
+        notFull_.wait(locker, [this]{return needStop_ || NotFull();} );
         if(needStop_)
             return ;
         queue_.push_back(std::forward<F>(x));
@@ -128,13 +127,12 @@ private:
 
 private:
     std::list<T> queue_;
-    std::mutex mutex_;
-    std::condition_vatiable notEmpty_;
-    std::condition_vatiable notFull;
-
+    std::mutex mutex_;// 互斥锁
+    std::condition_variable notEmpty_; //非空条件变量
+    std::condition_variable notFull_;  //非满条件变量
     int maxSize_;
     bool needStop_;
-}
+};
 
 
 
