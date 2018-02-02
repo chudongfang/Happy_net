@@ -21,13 +21,13 @@ Acceptor::Acceptor(EventLoop* loop , const InetAddress& listenAddr)
     listenning_(false)
 {
     acceptSocket_.setReuseAddr(true);
-    acceptSocket_.bindAddress(listenAddr);
+    acceptSocket_.bindAddress(listenAddr);//给本机Socket绑定地址
     acceptChannel_.setReadCallback(
-      boost::bind(&Acceptor::handleRead, this));
+        boost::bind(&Acceptor::handleRead, this));
 }
 
 
-void Acceptor::listen()
+void Acceptor::listen() //调用listen函数监听本机Socket
 {
     loop_->assertInLoopThread();
     listenning_ = true;
@@ -36,7 +36,7 @@ void Acceptor::listen()
 }
 
 
-void Acceptor::handleRead()
+void Acceptor::handleRead()//作为Channel的回调,当Sockets出现可读清空下进行Acceptor
 {
     loop_->assertInLoopThread();
     InetAddress peerAddr(0);
@@ -45,7 +45,8 @@ void Acceptor::handleRead()
         if (newConnectionCallback_) {
             newConnectionCallback_(connfd, peerAddr);
         } 
-        else 
+        //如果没有设置回调函数,则关闭Socket
+        else  
         {
             sockets::close(connfd);
         }

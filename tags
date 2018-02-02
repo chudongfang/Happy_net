@@ -49,6 +49,7 @@ ChannelList	net/Poller.h	/^    typedef std::vector<Channel*> ChannelList;$/;"	t	
 ChannelMap	net/Poller.h	/^    typedef std::map<int , Channel*> ChannelMap;$/;"	t	class:Happy::Poller
 Condition	base/thread/Condition.h	/^  explicit Condition(MutexLock& mutex) : mutex_(mutex)$/;"	f	class:Happy::Condition
 Condition	base/thread/Condition.h	/^class Condition : boost::noncopyable$/;"	c	namespace:Happy
+ConnectionCallback	net/TcpConnection.h	/^    typedef function<void (const TcpConnectionPtr&)> ConnectionCallback;$/;"	t	class:Happy::TcpConnection
 CountDownLatch	base/thread/CountDownLatch.h	/^  explicit CountDownLatch(int count)$/;"	f	class:muduo::CountDownLatch
 CountDownLatch	base/thread/CountDownLatch.h	/^class CountDownLatch : boost::noncopyable$/;"	c	namespace:muduo
 Counter	base/thread/test/Counter.cc	/^  Counter() : value_(0) {}$/;"	f	class:Counter
@@ -111,6 +112,7 @@ Happy	net/Socket/Socket_Base.cc	/^namespace Happy$/;"	n	file:
 Happy	net/Socket/Socket_Base.h	/^namespace Happy$/;"	n
 Happy	net/Socket_Base.cc	/^namespace Happy$/;"	n	file:
 Happy	net/Socket_Base.h	/^namespace Happy$/;"	n
+Happy	net/TcpConnection.h	/^namespace Happy$/;"	n
 InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(const std::string& ip, uint16_t port)$/;"	f	class:Happy::InetAddress
 InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(uint16_t port)$/;"	f	class:Happy::InetAddress
 InetAddress	net/InetAddress.h	/^    InetAddress(const struct sockaddr_in& addr)$/;"	f	class:Happy::InetAddress
@@ -149,6 +151,7 @@ MUDUO_BASE_WEAKCALLBACK_H	base/thread/WeakCallback.h	9;"	d
 Map	base/thread/test/Customer.cc	/^  typedef std::map<string, EntryList> Map;$/;"	t	class:CustomerData	file:
 MapPtr	base/thread/test/Customer.cc	/^  typedef boost::shared_ptr<Map> MapPtr;$/;"	t	class:CustomerData	file:
 MaxTaskCount	base/ThreadPool/ThreadPool.hpp	/^const int MaxTaskCount = 100;$/;"	v
+MessageCallback	net/TcpConnection.h	/^                              ssize_t len)> MessageCallback;$/;"	t	class:Happy::TcpConnection
 MutexLock	base/thread/Mutex.h	/^  MutexLock()$/;"	f	class:Happy::MutexLock
 MutexLock	base/thread/Mutex.h	/^class MutexLock : boost::noncopyable$/;"	c	namespace:Happy
 MutexLockGuard	base/thread/Mutex.h	/^  explicit MutexLockGuard(MutexLock& mutex) : mutex_(mutex)$/;"	f	class:Happy::MutexLockGuard
@@ -201,6 +204,7 @@ Socket	net/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Socket	net/Socket/Socket.h	/^    explicit Socket(int sockfd)$/;"	f	class:Happy::Socket
 Socket	net/Socket/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Start	base/ThreadPool/ThreadPool.hpp	/^    void Start(int numThreads)$/;"	f	class:ThreadPool
+StateE	net/TcpConnection.h	/^    enum StateE{ kConneting, kConneted, };$/;"	g	class:Happy::TcpConnection
 Stock	base/thread/test/Factory.cc	/^  Stock(const string& name)$/;"	f	class:Stock
 Stock	base/thread/test/Factory.cc	/^class Stock : boost::noncopyable$/;"	c	file:
 Stock	base/thread/test/Factory_deadlock.cc	/^  Stock(const string& name)$/;"	f	class:Stock
@@ -231,6 +235,8 @@ TESTS	base/thread/Makefile	/^TESTS= atomic_unittest \\$/;"	m
 Take	base/ThreadPool/SyncQueue.hpp	/^    void Take(T& t)$/;"	f	class:SyncQueue
 Take	base/ThreadPool/SyncQueue.hpp	/^    void Take(std::list<T>& list)$/;"	f	class:SyncQueue
 Task	base/thread/ThreadPool.h	/^  typedef boost::function<void ()> Task;$/;"	t	class:Happy::ThreadPool
+TcpConnection	net/TcpConnection.h	/^class TcpConnection $/;"	c	namespace:Happy
+TcpConnectionPtr	net/TcpConnection.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:Happy
 Test	base/thread/test/BlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
 Test	base/thread/test/BlockingQueue_test.cc	/^class Test$/;"	c	file:
 Test	base/thread/test/BoundedBlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
@@ -288,6 +294,8 @@ _SOCKET_BASE_H	net/Socket/Socket_Base.h	9;"	d
 _SOCKET_BASE_H	net/Socket_Base.h	9;"	d
 _SOCKET_H	net/Socket.h	9;"	d
 _SOCKET_H	net/Socket/Socket.h	9;"	d
+_TCPCONNECTION_H	net/TcpConnection.h	9;"	d
+_TCPSERVER_H	net/TcpServer.h	9;"	d
 _THREAD_H	base/thread1/Thread.h	9;"	d
 abortNotInLoopThread	net/EventLoop.cc	/^void EventLoop::abortNotInLoopThread()$/;"	f	class:EventLoop
 accept	net/Socket.cc	/^int Socket::accept(InetAddress * peeraddr)$/;"	f	class:Socket
@@ -323,6 +331,7 @@ callingPengdingFunctors_	net/EventLoop.h	/^    bool callingPengdingFunctors_;$/;
 cancel	base/thread/test/RequestInventory_test2.cc	/^  void cancel() __attribute__ ((noinline))$/;"	f	class:Request
 capacity	base/thread/BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
 cb_	base/thread/SignalSlot.h	/^  Callback cb_;$/;"	m	struct:muduo::detail::SlotImpl
+channel_	net/TcpConnection.h	/^    boost::scoped_ptr<Channel> channel_;$/;"	m	class:Happy::TcpConnection
 channels_	net/Poller.h	/^    ChannelMap channels_;    \/\/fd 与 channel对应$/;"	m	class:Happy::Poller
 clean	base/thread/SignalSlot.h	/^  void clean()$/;"	f	struct:muduo::detail::SignalImpl
 close	net/Socket/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
@@ -334,6 +343,8 @@ condition_	base/thread/CountDownLatch.h	/^  Condition condition_;$/;"	m	class:mu
 connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func)$/;"	f	class:muduo::Signal
 connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func, const boost::shared_ptr<void>& tie)$/;"	f	class:muduo::Signal
 connect	base/thread/SignalSlotTrivial.h	/^  void connect(Functor&& func)$/;"	f	class:SignalTrivial
+connected	net/TcpConnection.h	/^    bool connected() const { return state_ == kConneted; }$/;"	f	class:Happy::TcpConnection
+connectionCallback_	net/TcpConnection.h	/^    ConnectionCallback connectionCallback_;$/;"	m	class:Happy::TcpConnection
 copyOnWrite	base/thread/SignalSlot.h	/^  void copyOnWrite()$/;"	f	struct:muduo::detail::SignalImpl
 countDown	base/thread/CountDownLatch.h	/^  void countDown()$/;"	f	class:muduo::CountDownLatch
 count_	base/thread/CountDownLatch.h	/^  int count_;$/;"	m	class:muduo::CountDownLatch
@@ -408,6 +419,7 @@ getData	base/thread/test/RequestInventory_test.cc	/^  RequestListPtr getData() c
 getData	base/thread/test/RequestInventory_test2.cc	/^  RequestListPtr getData() const$/;"	f	class:Inventory	file:
 getInt32	base/thread/test/destruct.cc	/^int32_t getInt32()$/;"	f
 getInt64	base/thread/test/destruct.cc	/^int64_t getInt64()$/;"	f
+getLoop	net/TcpConnection.h	/^    EventLoop* getLoop() const { return loop_; }$/;"	f	class:Happy::TcpConnection
 getPthreadMutex	base/thread/Mutex.h	/^  pthread_mutex_t* getPthreadMutex() \/* non-const *\/$/;"	f	class:Happy::MutexLock
 getSockAddrInet	net/InetAddress.h	/^    const struct sockaddr_in& getSockAddrInet() const { return addr_; }$/;"	f	class:Happy::InetAddress
 getSockAddrInet	net/Socket/InetAddress.h	/^    const struct sockaddr_in& getSockAddrInet() const { return addr_; }$/;"	f	class:Happy::InetAddress
@@ -416,7 +428,7 @@ getString	base/thread/test/destruct.cc	/^string getString()$/;"	f
 gettid	base/thread/Thread.cc	/^pid_t gettid()$/;"	f	namespace:__anon1
 gettid	base/thread1/CurrentThread.cc	/^pid_t gettid()$/;"	f	namespace:__anon2
 handleEvent	net/Channel.cc	/^void Channel::handleEvent()$/;"	f	class:Channel
-handleRead	net/Acceptor.cc	/^void Acceptor::handleRead()$/;"	f	class:Acceptor
+handleRead	net/Acceptor.cc	/^void Acceptor::handleRead()\/\/作为Channel的回调,当Sockets出现可读清空下进行Acceptor$/;"	f	class:Acceptor
 handleRead	net/EventLoop.cc	/^void EventLoop::handleRead()$/;"	f	class:EventLoop
 holder_	base/thread/Mutex.h	/^  pid_t holder_;$/;"	m	class:Happy::MutexLock
 hostToNetwork16	net/Socket/Socket_Base.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:Happy::sockets
@@ -449,6 +461,8 @@ joinAll	base/thread/test/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Te
 joinAll	base/thread/test/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
 joined_	base/thread/Thread.h	/^  bool        joined_;$/;"	m	class:Happy::Thread
 joined_	base/thread1/Thread.h	/^    bool joined_;$/;"	m	class:Happy::Thread
+kConneted	net/TcpConnection.h	/^    enum StateE{ kConneting, kConneted, };$/;"	e	enum:Happy::TcpConnection::StateE
+kConneting	net/TcpConnection.h	/^    enum StateE{ kConneting, kConneted, };$/;"	e	enum:Happy::TcpConnection::StateE
 kInaddrAny	net/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kInaddrAny	net/Socket/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kNoneEvent	net/Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
@@ -463,17 +477,20 @@ key	base/thread/test/Factory_deadlock.cc	/^  const string& key() const { return 
 key	base/thread/test/Factory_racecondition.cc	/^  const string& key() const { return name_; }$/;"	f	class:Stock
 latch_	base/thread/test/BlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
 latch_	base/thread/test/BoundedBlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
-listen	net/Acceptor.cc	/^void Acceptor::listen()$/;"	f	class:Acceptor
+listen	net/Acceptor.cc	/^void Acceptor::listen() \/\/调用listen函数监听本机Socket$/;"	f	class:Acceptor
 listen	net/Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
 listen	net/Socket/Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
 listenOrDie	net/Socket/Socket_Base.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:Happy::sockets
 listenOrDie	net/Socket_Base.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:Happy::sockets
 listenning	net/Acceptor.h	/^    bool listenning() const {return listenning_;}$/;"	f	class:Happy::Acceptor
 listenning_	net/Acceptor.h	/^    bool listenning_;$/;"	m	class:Happy::Acceptor
+localAddr_	net/TcpConnection.h	/^    InetAddress localAddr_; \/\/本机地址$/;"	m	class:Happy::TcpConnection
+localAddress	net/TcpConnection.h	/^    const InetAddress& localAddress() {return localAddr_; }$/;"	f	class:Happy::TcpConnection
 lock	base/thread/Mutex.h	/^  void lock()$/;"	f	class:Happy::MutexLock
 loop	net/EventLoop.cc	/^void EventLoop::loop()$/;"	f	class:EventLoop
 loop_	net/Acceptor.h	/^    EventLoop * loop_;    \/\/每个Acceptor属于一个Eventloop$/;"	m	class:Happy::Acceptor
 loop_	net/Channel.h	/^    EventLoop* loop_;    \/\/Channel对应的Eventloop $/;"	m	class:Happy::Channel
+loop_	net/TcpConnection.h	/^    EventLoop * loop_;$/;"	m	class:Happy::TcpConnection
 looping_	net/EventLoop.h	/^    bool looping_;$/;"	m	class:Happy::EventLoop
 main	base/ThreadPool/main.cc	/^int main()$/;"	f
 main	base/test/test_accept.cc	/^int main(int argc, char const *argv[])$/;"	f
@@ -513,6 +530,7 @@ makeWeakCallback	base/thread/WeakCallback.h	/^WeakCallback<CLASS, ARGS...> makeW
 maxSize_	base/ThreadPool/SyncQueue.hpp	/^    int maxSize_;$/;"	m	class:SyncQueue
 memberFunc	base/thread/test/Thread_test.cc	/^  void memberFunc()$/;"	f	class:Foo
 memberFunc2	base/thread/test/Thread_test.cc	/^  void memberFunc2(const std::string& text)$/;"	f	class:Foo
+messageCallback_	net/TcpConnection.h	/^    MessageCallback    messageCallback_;$/;"	m	class:Happy::TcpConnection
 message_	base/thread/Exception.h	/^  std::string message_;$/;"	m	class:muduo::Exception
 more	base/thread/test/Singleton_test.cc	/^  void more()$/;"	f	class:Destruct
 more	base/thread/test/Singleton_test.cc	/^void Destruct<0>::more()$/;"	f	class:Destruct
@@ -563,6 +581,7 @@ name	base/thread/test/Singleton_test.cc	/^  const std::string& name() const { re
 name	base/thread/test/ThreadLocalSingleton_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
 name	base/thread/test/ThreadLocal_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
 name	base/thread1/CurrentThread.cc	/^const char* CurrentThread::name()$/;"	f	class:CurrentThread
+name	net/TcpConnection.h	/^    const std::string& name() const { return name_; }$/;"	f	class:Happy::TcpConnection
 name_	base/thread/Thread.cc	/^  std::string name_;$/;"	m	struct:__anon1::ThreadData	file:
 name_	base/thread/Thread.h	/^  std::string name_;$/;"	m	class:Happy::Thread
 name_	base/thread/ThreadPool.h	/^  std::string name_;$/;"	m	class:Happy::ThreadPool
@@ -574,6 +593,7 @@ name_	base/thread/test/Singleton_test.cc	/^  std::string name_;$/;"	m	class:Test
 name_	base/thread/test/ThreadLocalSingleton_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
 name_	base/thread/test/ThreadLocal_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
 name_	base/thread1/Thread.h	/^    std::string name_; \/\/名字$/;"	m	class:Happy::Thread
+name_	net/TcpConnection.h	/^    std::string name_;$/;"	m	class:Happy::TcpConnection
 needStop_	base/ThreadPool/SyncQueue.hpp	/^    bool needStop_;$/;"	m	class:SyncQueue
 networkToHost16	net/Socket/Socket_Base.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:Happy::sockets
 networkToHost16	net/Socket_Base.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:Happy::sockets
@@ -614,6 +634,8 @@ operator =	base/thread/test/Counter.cc	/^Counter& Counter::operator=(const Count
 ownerLoop	net/Channel.h	/^    EventLoop * ownerLoop() {return loop_;}$/;"	f	class:Happy::Channel
 ownerLoop_	net/Poller.h	/^    EventLoop *  ownerLoop_; \/\/ 其对应的EvenLoop$/;"	m	class:Happy::Poller
 pcond_	base/thread/Condition.h	/^  pthread_cond_t pcond_;$/;"	m	class:Happy::Condition
+peerAddr_	net/TcpConnection.h	/^    InetAddress peerAddr_;  \/\/客户端地址$/;"	m	class:Happy::TcpConnection
+peerAddress	net/TcpConnection.h	/^    const InetAddress& peerAddress()  { return peerAddr_; }$/;"	f	class:Happy::TcpConnection
 pendingFunctors_	net/EventLoop.h	/^    std::vector<Functor> pendingFunctors_;$/;"	m	class:Happy::EventLoop
 pkey_	base/thread/ThreadLocal.h	/^  pthread_key_t pkey_;$/;"	m	class:Happy::ThreadLocal
 poll	net/Poller.cc	/^int  Poller::poll(int timeoutMs, ChannelList * activeChannels)$/;"	f	class:Poller
@@ -674,7 +696,9 @@ runInThread	base/thread/ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	cla
 runServer	base/thread/test/Waiter_test.cc	/^void runServer(Waiter* waiter, int sec)$/;"	f
 running_	base/ThreadPool/ThreadPool.hpp	/^    std::atomic_bool running_;$/;"	m	class:ThreadPool
 running_	base/thread/ThreadPool.h	/^  bool running_;$/;"	m	class:Happy::ThreadPool
+setConnectionCallback	net/TcpConnection.h	/^    void setConnectionCallback(const ConnectionCallback& Callback)$/;"	f	class:Happy::TcpConnection
 setErrorCallback	net/Channel.h	/^    void setErrorCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
+setMessageCallback	net/TcpConnection.h	/^    void setMessageCallback(const MessageCallback& Callback)$/;"	f	class:Happy::TcpConnection
 setName	base/thread/test/SingletonThreadLocal_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
 setName	base/thread/test/Singleton_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
 setName	base/thread/test/ThreadLocalSingleton_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
@@ -687,6 +711,7 @@ setReuseAddr	net/Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Sock
 setReuseAddr	net/Socket/Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Socket
 setSockAddrInet	net/InetAddress.h	/^    void setSockAddrInet(const struct sockaddr_in& addr) {addr_=  addr;};$/;"	f	class:Happy::InetAddress
 setSockAddrInet	net/Socket/InetAddress.h	/^    void setSockAddrInet(const struct sockaddr_in& addr) {addr_=  addr;};$/;"	f	class:Happy::InetAddress
+setState	net/TcpConnection.h	/^    void setState(StateE s) {  }$/;"	f	class:Happy::TcpConnection
 setWriteCallback	net/Channel.h	/^    void setWriteCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
 set_index	net/Channel.h	/^    void set_index(int idx) {index_ = idx;} $/;"	f	class:Happy::Channel
 set_revents	net/Channel.h	/^    void set_revents(int revt) { revents_ = revt; }$/;"	f	class:Happy::Channel
@@ -707,6 +732,7 @@ sockaddr_cast	net/Socket/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* 
 sockaddr_cast	net/Socket/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
 sockaddr_cast	net/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* addr)$/;"	f	namespace:Happy
 sockaddr_cast	net/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
+socket_	net/TcpConnection.h	/^    boost::scoped_ptr<Socket> socket_;$/;"	m	class:Happy::TcpConnection
 sockets	net/Socket/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
 sockets	net/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
 sockfd_	net/Socket.h	/^    const int sockfd_;$/;"	m	class:Happy::Socket
@@ -723,6 +749,7 @@ started	base/thread/Thread.h	/^  bool started() const { return started_; }$/;"	f
 started	base/thread1/Thread.h	/^    bool started(){}$/;"	f	class:Happy::Thread
 started_	base/thread/Thread.h	/^  bool        started_;$/;"	m	class:Happy::Thread
 started_	base/thread1/Thread.h	/^    bool started_;$/;"	m	class:Happy::Thread
+state_	net/TcpConnection.h	/^    StateE state_;$/;"	m	class:Happy::TcpConnection
 stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::shared_ptr<Stock> > stocks_;$/;"	m	class:version1::StockFactory	file:
 stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:StockFactory	file:
 stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:version2::StockFactory	file:

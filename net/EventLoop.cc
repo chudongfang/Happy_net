@@ -76,7 +76,7 @@ void EventLoop::loop()
         for(ChannelList::iterator it = activeChannels_.begin();
             it != activeChannels_.end() ; ++it)
         {
-            (*it) -> handleEvent();
+            (*it) -> handleEvent();  //根据事件的不同执行对应的回调
         }
 
         doPendingFunctors();

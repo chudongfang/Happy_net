@@ -39,6 +39,8 @@ void Channel::handleEvent()
         if(errorCallback_) errorCallback_();
     }
 
+    //出现可读事件时调用readCallback_()回调
+    //这里可用Acceptor的回调,用来Accept Socket
     if(revents_ & (POLLIN | POLLPRI | POLLRDHUP) ){
         if(readCallback_) readCallback_();
     }

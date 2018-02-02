@@ -26,6 +26,8 @@ void Socket::listen()
     sockets::listenOrDie(sockfd_);
 }
 
+
+//Accept并得到客户端Socket地址保存在peeraddr中
 int Socket::accept(InetAddress * peeraddr)
 {
     struct sockaddr_in addr;

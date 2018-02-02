@@ -26,7 +26,8 @@ public:
     void bindAddress(const InetAddress& localaddr);
 
     void listen();
-
+    
+    //接受
     int accept(InetAddress * peeraddr);
 
     void setReuseAddr(bool on);
