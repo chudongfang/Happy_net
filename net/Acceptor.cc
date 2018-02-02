@@ -16,8 +16,8 @@ using namespace Happy;
 
 Acceptor::Acceptor(EventLoop* loop , const InetAddress& listenAddr)
     : loop_(loop),
-    acceptSocket_(sockets::createNonblockingOrDie()),
-    acceptChannel_(loop, acceptSocket_.fd()),
+    acceptSocket_(sockets::createNonblockingOrDie()), //初始化一个非阻塞Socket
+    acceptChannel_(loop, acceptSocket_.fd()),         //初始化Channel
     listenning_(false)
 {
     acceptSocket_.setReuseAddr(true);

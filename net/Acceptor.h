@@ -27,19 +27,18 @@ public:
     void setNewConnectionCallback(const NewConnectionCallback& Callback)
     { newConnectionCallback_ = Callback; }
     
-    
+    //监听 
     void listen();
     bool listenning() const {return listenning_;}
 
     
 private:
-    void handleRead(); //供Channel调用
-    EventLoop * loop_;//每个Acceptor属与一个Eventloop
-    Socket acceptSocket_;
-    Channel acceptChannel_;
+    void handleRead();    //供Channel调用
+    EventLoop * loop_;    //每个Acceptor属于一个Eventloop
+    Socket acceptSocket_; //Socket,其为Server Socket
+    Channel acceptChannel_;//一个Channel,负责管理Server Socket
     NewConnectionCallback newConnectionCallback_;
     bool listenning_;
-
 };
 
 

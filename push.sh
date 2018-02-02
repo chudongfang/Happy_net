@@ -7,3 +7,4 @@ git pull
 git add .
 git commit -m ${ls_date}
 git push origin
+ctags -R .
