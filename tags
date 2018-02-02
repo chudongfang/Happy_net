@@ -1,0 +1,852 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Acceptor	net/Acceptor.cc	/^Acceptor::Acceptor(EventLoop* loop , const InetAddress& listenAddr)$/;"	f	class:Acceptor
+Acceptor	net/Acceptor.h	/^class Acceptor $/;"	c	namespace:Happy
+Add	base/ThreadPool/SyncQueue.hpp	/^    void Add(F&&x)$/;"	f	class:SyncQueue
+AddTask	base/ThreadPool/ThreadPool.hpp	/^    void AddTask(const Task & task)$/;"	f	class:ThreadPool
+AtomicInt32	base/thread/Atomic.h	/^typedef detail::AtomicIntegerT<int32_t> AtomicInt32;$/;"	t	namespace:Happy
+AtomicInt32	base/thread1/Atomic.h	/^typedef detail::AtomicIntegerT<int32_t> AtomicInt32;$/;"	t	namespace:Happy
+AtomicInt64	base/thread/Atomic.h	/^typedef detail::AtomicIntegerT<int64_t> AtomicInt64;$/;"	t	namespace:Happy
+AtomicInt64	base/thread1/Atomic.h	/^typedef detail::AtomicIntegerT<int64_t> AtomicInt64;$/;"	t	namespace:Happy
+AtomicIntegerT	base/thread/Atomic.h	/^  AtomicIntegerT()$/;"	f	class:Happy::detail::AtomicIntegerT
+AtomicIntegerT	base/thread/Atomic.h	/^class AtomicIntegerT : boost::noncopyable$/;"	c	namespace:Happy::detail
+AtomicIntegerT	base/thread1/Atomic.h	/^  AtomicIntegerT()$/;"	f	class:Happy::detail::AtomicIntegerT
+AtomicIntegerT	base/thread1/Atomic.h	/^class AtomicIntegerT : boost::noncopyable$/;"	c	namespace:Happy::detail
+BASE_SRC	base/ThreadPool/Makefile	/^BASE_SRC =  $/;"	m
+BASE_SRC	base/thread1/Makefile	/^BASE_SRC =  $/;"	m
+BASE_SRC	net/Makefile	/^BASE_SRC = ..\/base\/thread1\/CurrentThread.cc $/;"	m
+BINARIES	base/ThreadPool/Makefile	/^BINARIES = main$/;"	m
+BINARIES	base/thread1/Makefile	/^BINARIES = test1$/;"	m
+BINARIES	net/Makefile	/^BINARIES = test_Acceptor$/;"	m
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotLife)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotOne)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotTrivialOne)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotTrivialString)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotTrivialZero)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/SignalSlot_test.cc	/^BOOST_AUTO_TEST_CASE(testSignalSlotZero)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/WeakCallback_test.cc	/^BOOST_AUTO_TEST_CASE(testMove)$/;"	f
+BOOST_AUTO_TEST_CASE	base/thread/test/WeakCallback_test.cc	/^BOOST_AUTO_TEST_CASE(testWeakCallback)$/;"	f
+BOOST_TEST_MAIN	base/thread/test/SignalSlot_test.cc	6;"	d	file:
+BOOST_TEST_MAIN	base/thread/test/WeakCallback_test.cc	3;"	d	file:
+Bar	base/thread/test/Exception_test.cc	/^class Bar$/;"	c	file:
+BlockingQueue	base/thread/BlockingQueue.h	/^  BlockingQueue()$/;"	f	class:muduo::BlockingQueue
+BlockingQueue	base/thread/BlockingQueue.h	/^class BlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+BoundedBlockingQueue	base/thread/BoundedBlockingQueue.h	/^  explicit BoundedBlockingQueue(int maxSize)$/;"	f	class:muduo::BoundedBlockingQueue
+BoundedBlockingQueue	base/thread/BoundedBlockingQueue.h	/^class BoundedBlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+CXXFLAGS	base/ThreadPool/Makefile	/^CXXFLAGS = -O0 -g -std=c++11 -Wall -I ..\/.. -pthread$/;"	m
+CXXFLAGS	base/thread/Makefile	/^CXXFLAGS=-g -Wall -rdynamic -march=native$/;"	m
+CXXFLAGS	base/thread1/Makefile	/^CXXFLAGS = -O0 -g -std=c++11 -Wall -I ..\/.. -pthread$/;"	m
+CXXFLAGS	net/Makefile	/^CXXFLAGS = -O0 -g -std=c++11 -Wall -I ..\/base\/ -pthread$/;"	m
+Callback	base/thread/SignalSlot.h	/^  typedef std::function<void (ARGS...)> Callback;$/;"	t	class:muduo::Signal
+Channel	net/Channel.cc	/^Channel::Channel(EventLoop* loop, int fdArg)$/;"	f	class:Channel
+Channel	net/Channel.h	/^class Channel$/;"	c	namespace:Happy
+ChannelList	net/EventLoop.h	/^    typedef std::vector<Channel*> ChannelList; \/\/存储Channel$/;"	t	class:Happy::EventLoop
+ChannelList	net/Poller.h	/^    typedef std::vector<Channel*> ChannelList;$/;"	t	class:Happy::Poller
+ChannelMap	net/Poller.h	/^    typedef std::map<int , Channel*> ChannelMap;$/;"	t	class:Happy::Poller
+Condition	base/thread/Condition.h	/^  explicit Condition(MutexLock& mutex) : mutex_(mutex)$/;"	f	class:Happy::Condition
+Condition	base/thread/Condition.h	/^class Condition : boost::noncopyable$/;"	c	namespace:Happy
+CountDownLatch	base/thread/CountDownLatch.h	/^  explicit CountDownLatch(int count)$/;"	f	class:muduo::CountDownLatch
+CountDownLatch	base/thread/CountDownLatch.h	/^class CountDownLatch : boost::noncopyable$/;"	c	namespace:muduo
+Counter	base/thread/test/Counter.cc	/^  Counter() : value_(0) {}$/;"	f	class:Counter
+Counter	base/thread/test/Counter.cc	/^class Counter : boost::noncopyable$/;"	c	file:
+CurrentThread	base/thread/Thread.cc	/^namespace CurrentThread$/;"	n	namespace:Happy	file:
+CurrentThread	base/thread/Thread.h	/^namespace CurrentThread$/;"	n	namespace:Happy
+CurrentThread	base/thread1/CurrentThread.cc	/^namespace CurrentThread$/;"	n	namespace:Happy	file:
+CurrentThread	base/thread1/CurrentThread.h	/^namespace CurrentThread$/;"	n	namespace:Happy
+CustomerData	base/thread/test/Customer.cc	/^  CustomerData()$/;"	f	class:CustomerData
+CustomerData	base/thread/test/Customer.cc	/^class CustomerData : boost::noncopyable$/;"	c	file:
+Data	base/thread/SignalSlot.h	/^  typedef SignalImpl<Callback> Data;$/;"	t	struct:muduo::detail::SlotImpl
+Destruct	base/thread/test/Singleton_test.cc	/^  Destruct()$/;"	f	class:Destruct
+Destruct	base/thread/test/Singleton_test.cc	/^class Destruct$/;"	c	file:
+Empty	base/ThreadPool/SyncQueue.hpp	/^    bool Empty()$/;"	f	class:SyncQueue
+Entry	base/thread/test/Customer.cc	/^  typedef std::pair<string, int> Entry;$/;"	t	class:CustomerData	file:
+EntryList	base/thread/test/Customer.cc	/^  typedef std::vector<Entry> EntryList;$/;"	t	class:CustomerData	file:
+EventCallback	net/Channel.h	/^    typedef boost::function<void()> EventCallback; \/\/回调函数$/;"	t	class:Happy::Channel
+EventLoop	net/EventLoop.cc	/^EventLoop::EventLoop()$/;"	f	class:EventLoop
+EventLoop	net/EventLoop.h	/^class EventLoop $/;"	c	namespace:Happy
+Exception	base/thread/Exception.cc	/^Exception::Exception(const char* what)$/;"	f	class:Exception
+Exception	base/thread/Exception.h	/^class Exception : public std::exception$/;"	c	namespace:muduo
+Foo	base/thread/test/CopyOnWrite_test.cc	/^class Foo$/;"	c	file:
+Foo	base/thread/test/NonRecursiveMutex_test.cc	/^class Foo$/;"	c	file:
+Foo	base/thread/test/Observer.cc	/^class Foo : public Observer$/;"	c	file:
+Foo	base/thread/test/Observer_safe.cc	/^class Foo : public Observer$/;"	c	file:
+Foo	base/thread/test/SignalSlot_test.cc	/^class Foo : boost::noncopyable$/;"	c	file:
+Foo	base/thread/test/Thread_test.cc	/^  explicit Foo(double x)$/;"	f	class:Foo
+Foo	base/thread/test/Thread_test.cc	/^class Foo$/;"	c	file:
+Foo	base/thread/test/WeakCallback_test.cc	/^class Foo : boost::noncopyable$/;"	c	file:
+FooList	base/thread/test/CopyOnWrite_test.cc	/^typedef std::vector<Foo> FooList;$/;"	t	file:
+FooListPtr	base/thread/test/CopyOnWrite_test.cc	/^typedef boost::shared_ptr<FooList> FooListPtr;$/;"	t	file:
+Full	base/ThreadPool/SyncQueue.hpp	/^    bool Full()$/;"	f	class:SyncQueue
+Functor	base/thread/SignalSlotTrivial.h	/^  typedef std::function<void (ARGS...)> Functor;$/;"	t	class:SignalTrivial
+Functor	net/EventLoop.h	/^    typedef std::function<void()> Functor;$/;"	t	class:Happy::EventLoop
+GlobalObject	base/thread/test/ExitDeadLock.cc	/^class GlobalObject$/;"	c	file:
+HEADERS	base/thread/Makefile	/^HEADERS=$(wildcard *.h)$/;"	m
+Happy	base/thread/Atomic.h	/^namespace Happy$/;"	n
+Happy	base/thread/Condition.h	/^namespace Happy$/;"	n
+Happy	base/thread/Mutex.h	/^namespace Happy$/;"	n
+Happy	base/thread/Thread.cc	/^namespace Happy$/;"	n	file:
+Happy	base/thread/Thread.h	/^namespace Happy$/;"	n
+Happy	base/thread/ThreadLocal.h	/^namespace Happy$/;"	n
+Happy	base/thread/ThreadPool.h	/^namespace Happy$/;"	n
+Happy	base/thread1/Atomic.h	/^namespace Happy$/;"	n
+Happy	base/thread1/CurrentThread.cc	/^namespace Happy$/;"	n	file:
+Happy	base/thread1/CurrentThread.h	/^namespace Happy$/;"	n
+Happy	base/thread1/Thread.h	/^namespace Happy$/;"	n
+Happy	net/Acceptor.h	/^namespace Happy$/;"	n
+Happy	net/Callbacks.h	/^namespace Happy$/;"	n
+Happy	net/Channel.h	/^namespace Happy$/;"	n
+Happy	net/EventLoop.h	/^namespace Happy$/;"	n
+Happy	net/InetAddress.cc	/^namespace Happy$/;"	n	file:
+Happy	net/InetAddress.h	/^namespace Happy$/;"	n
+Happy	net/Poller.h	/^namespace Happy$/;"	n
+Happy	net/Socket.h	/^namespace Happy$/;"	n
+Happy	net/Socket/InetAddress.cc	/^namespace Happy$/;"	n	file:
+Happy	net/Socket/InetAddress.h	/^namespace Happy$/;"	n
+Happy	net/Socket/Socket.h	/^namespace Happy$/;"	n
+Happy	net/Socket/Socket_Base.cc	/^namespace Happy$/;"	n	file:
+Happy	net/Socket/Socket_Base.h	/^namespace Happy$/;"	n
+Happy	net/Socket_Base.cc	/^namespace Happy$/;"	n	file:
+Happy	net/Socket_Base.h	/^namespace Happy$/;"	n
+InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(const std::string& ip, uint16_t port)$/;"	f	class:Happy::InetAddress
+InetAddress	net/InetAddress.cc	/^InetAddress::InetAddress(uint16_t port)$/;"	f	class:Happy::InetAddress
+InetAddress	net/InetAddress.h	/^    InetAddress(const struct sockaddr_in& addr)$/;"	f	class:Happy::InetAddress
+InetAddress	net/InetAddress.h	/^class InetAddress $/;"	c	namespace:Happy
+InetAddress	net/Socket/InetAddress.cc	/^InetAddress::InetAddress(const std::string& ip, uint16_t port)$/;"	f	class:Happy::InetAddress
+InetAddress	net/Socket/InetAddress.cc	/^InetAddress::InetAddress(uint16_t port)$/;"	f	class:Happy::InetAddress
+InetAddress	net/Socket/InetAddress.h	/^    InetAddress(const struct sockaddr_in& addr)$/;"	f	class:Happy::InetAddress
+InetAddress	net/Socket/InetAddress.h	/^class InetAddress $/;"	c	namespace:Happy
+Inventory	base/thread/test/MutualDeadLock.cc	/^class Inventory$/;"	c	file:
+Inventory	base/thread/test/RequestInventory_test.cc	/^  Inventory()$/;"	f	class:Inventory
+Inventory	base/thread/test/RequestInventory_test.cc	/^class Inventory$/;"	c	file:
+Inventory	base/thread/test/RequestInventory_test2.cc	/^  Inventory()$/;"	f	class:Inventory
+Inventory	base/thread/test/RequestInventory_test2.cc	/^class Inventory$/;"	c	file:
+Iterator	base/thread/test/Observer_safe.cc	/^  typedef std::vector<boost::weak_ptr<Observer> >::iterator Iterator;$/;"	t	class:Observable	file:
+LDFLAGS	base/ThreadPool/Makefile	/^LDFLAGS = -lpthread$/;"	m
+LDFLAGS	base/thread1/Makefile	/^LDFLAGS = -lpthread$/;"	m
+LDFLAGS	net/Makefile	/^LDFLAGS = -lpthread$/;"	m
+LIB_SRC	base/ThreadPool/Makefile	/^LIB_SRC = .\/SyncQueue.hpp .\/ThreadPool.hpp$/;"	m
+LIB_SRC	base/thread1/Makefile	/^LIB_SRC = .\/Thread.h$/;"	m
+LIB_SRC	net/Makefile	/^LIB_SRC = .\/Channel.cc .\/EventLoop.cc .\/Poller.cc .\/Acceptor.cc .\/Socket.cc .\/Socket_Base.cc .\/InetAddress.cc$/;"	m
+MUDUO_BASE_ATOMIC_H	base/thread/Atomic.h	9;"	d
+MUDUO_BASE_BLOCKINGQUEUE_H	base/thread/BlockingQueue.h	9;"	d
+MUDUO_BASE_BOUNDEDBLOCKINGQUEUE_H	base/thread/BoundedBlockingQueue.h	9;"	d
+MUDUO_BASE_CONDITION_H	base/thread/Condition.h	9;"	d
+MUDUO_BASE_COUNTDOWNLATCH_H	base/thread/CountDownLatch.h	9;"	d
+MUDUO_BASE_EXCEPTION_H	base/thread/Exception.h	9;"	d
+MUDUO_BASE_MUTEX_H	base/thread/Mutex.h	9;"	d
+MUDUO_BASE_SIGNALSLOTTRIVIAL_H	base/thread/SignalSlotTrivial.h	2;"	d
+MUDUO_BASE_SIGNALSLOT_H	base/thread/SignalSlot.h	2;"	d
+MUDUO_BASE_SINGLETON_H	base/thread/Singleton.h	9;"	d
+MUDUO_BASE_THREADLOCALSINGLETON_H	base/thread/ThreadLocalSingleton.h	9;"	d
+MUDUO_BASE_THREADLOCAL_H	base/thread/ThreadLocal.h	9;"	d
+MUDUO_BASE_THREADPOOL_H	base/thread/ThreadPool.h	9;"	d
+MUDUO_BASE_THREAD_H	base/thread/Thread.h	9;"	d
+MUDUO_BASE_WEAKCALLBACK_H	base/thread/WeakCallback.h	9;"	d
+Map	base/thread/test/Customer.cc	/^  typedef std::map<string, EntryList> Map;$/;"	t	class:CustomerData	file:
+MapPtr	base/thread/test/Customer.cc	/^  typedef boost::shared_ptr<Map> MapPtr;$/;"	t	class:CustomerData	file:
+MaxTaskCount	base/ThreadPool/ThreadPool.hpp	/^const int MaxTaskCount = 100;$/;"	v
+MutexLock	base/thread/Mutex.h	/^  MutexLock()$/;"	f	class:Happy::MutexLock
+MutexLock	base/thread/Mutex.h	/^class MutexLock : boost::noncopyable$/;"	c	namespace:Happy
+MutexLockGuard	base/thread/Mutex.h	/^  explicit MutexLockGuard(MutexLock& mutex) : mutex_(mutex)$/;"	f	class:Happy::MutexLockGuard
+MutexLockGuard	base/thread/Mutex.h	/^class MutexLockGuard : boost::noncopyable$/;"	c	namespace:Happy
+MutexLockGuard	base/thread/Mutex.h	93;"	d
+NewConnectionCallback	net/Acceptor.h	/^    typedef  std::function<void (int sockfd,const InetAddress& )> NewConnectionCallback;$/;"	t	class:Happy::Acceptor
+NotEmpty	base/ThreadPool/SyncQueue.hpp	/^    bool NotEmpty() const $/;"	f	class:SyncQueue
+NotFull	base/ThreadPool/SyncQueue.hpp	/^    bool NotFull() const $/;"	f	class:SyncQueue
+Observable	base/thread/test/Observer.cc	/^class Observable$/;"	c	file:
+Observable	base/thread/test/Observer_safe.cc	/^class Observable$/;"	c	file:
+Observer	base/thread/test/Observer.cc	/^class Observer$/;"	c	file:
+Observer	base/thread/test/Observer_safe.cc	/^class Observer : public boost::enable_shared_from_this<Observer>$/;"	c	file:
+PollFdList	net/Poller.h	/^    typedef std::vector<struct pollfd> PollFdList;$/;"	t	class:Happy::Poller
+Poller	net/Poller.cc	/^Poller::Poller(EventLoop* loop)$/;"	f	class:Poller
+Poller	net/Poller.h	/^class Poller $/;"	c	namespace:Happy
+Put	base/ThreadPool/SyncQueue.hpp	/^    void Put(T&&x)$/;"	f	class:SyncQueue
+Put	base/ThreadPool/SyncQueue.hpp	/^    void Put(const T& x)$/;"	f	class:SyncQueue
+Request	base/thread/test/MutualDeadLock.cc	/^class Request$/;"	c	file:
+Request	base/thread/test/RequestInventory_test.cc	/^  Request()$/;"	f	class:Request
+Request	base/thread/test/RequestInventory_test.cc	/^class Request$/;"	c	file:
+Request	base/thread/test/RequestInventory_test2.cc	/^  Request()$/;"	f	class:Request
+Request	base/thread/test/RequestInventory_test2.cc	/^class Request : public boost::enable_shared_from_this<Request>$/;"	c	file:
+Request	base/thread/test/SelfDeadLock.cc	/^class Request$/;"	c	file:
+RequestList	base/thread/test/RequestInventory_test.cc	/^  typedef std::set<Request*> RequestList;$/;"	t	class:Inventory	file:
+RequestList	base/thread/test/RequestInventory_test2.cc	/^  typedef std::set<RequestPtr> RequestList;$/;"	t	class:Inventory	file:
+RequestListPtr	base/thread/test/RequestInventory_test.cc	/^  typedef boost::shared_ptr<RequestList> RequestListPtr;$/;"	t	class:Inventory	file:
+RequestListPtr	base/thread/test/RequestInventory_test2.cc	/^  typedef boost::shared_ptr<RequestList> RequestListPtr;$/;"	t	class:Inventory	file:
+RequestPtr	base/thread/test/RequestInventory_test2.cc	/^typedef boost::shared_ptr<Request> RequestPtr;$/;"	t	file:
+RunInThread	base/ThreadPool/ThreadPool.hpp	/^    void RunInThread()$/;"	f	class:ThreadPool
+SA	base/test/test_accept.cc	/^typedef struct sockaddr SA;$/;"	t	typeref:struct:sockaddr	file:
+SA	net/Socket/Socket_Base.cc	/^typedef struct sockaddr SA;$/;"	t	namespace:Happy	typeref:struct:Happy::sockaddr	file:
+SA	net/Socket_Base.cc	/^typedef struct sockaddr SA;$/;"	t	namespace:Happy	typeref:struct:Happy::sockaddr	file:
+STL	base/thread/test/SingletonThreadLocal_test.cc	29;"	d	file:
+Signal	base/thread/SignalSlot.h	/^  Signal()$/;"	f	class:muduo::Signal
+Signal	base/thread/SignalSlot.h	/^class Signal<RET(ARGS...)> : boost::noncopyable$/;"	c	namespace:muduo
+SignalImpl	base/thread/SignalSlot.h	/^  SignalImpl()$/;"	f	struct:muduo::detail::SignalImpl
+SignalImpl	base/thread/SignalSlot.h	/^  typedef detail::SignalImpl<Callback> SignalImpl;$/;"	t	class:muduo::Signal
+SignalImpl	base/thread/SignalSlot.h	/^struct SignalImpl : boost::noncopyable$/;"	s	namespace:muduo::detail
+SignalTrivial	base/thread/SignalSlotTrivial.h	/^class SignalTrivial<RET(ARGS...)>$/;"	c
+Singleton	base/thread/Singleton.h	/^class Singleton : boost::noncopyable$/;"	c	namespace:muduo
+Size	base/ThreadPool/SyncQueue.hpp	/^    size_t Size()$/;"	f	class:SyncQueue
+Slot	base/thread/SignalSlot.h	/^typedef boost::shared_ptr<void> Slot;$/;"	t	namespace:muduo
+SlotImpl	base/thread/SignalSlot.h	/^  SlotImpl(const boost::shared_ptr<Data>& data, Callback&& cb)$/;"	f	struct:muduo::detail::SlotImpl
+SlotImpl	base/thread/SignalSlot.h	/^  SlotImpl(const boost::shared_ptr<Data>& data, Callback&& cb,$/;"	f	struct:muduo::detail::SlotImpl
+SlotImpl	base/thread/SignalSlot.h	/^  typedef detail::SlotImpl<Callback> SlotImpl;$/;"	t	class:muduo::Signal
+SlotImpl	base/thread/SignalSlot.h	/^struct SlotImpl : boost::noncopyable$/;"	s	namespace:muduo::detail
+SlotList	base/thread/SignalSlot.h	/^  typedef std::vector<boost::weak_ptr<SlotImpl<Callback> > > SlotList;$/;"	t	struct:muduo::detail::SignalImpl
+Socket	net/Socket.h	/^    explicit Socket(int sockfd)$/;"	f	class:Happy::Socket
+Socket	net/Socket.h	/^class Socket $/;"	c	namespace:Happy
+Socket	net/Socket/Socket.h	/^    explicit Socket(int sockfd)$/;"	f	class:Happy::Socket
+Socket	net/Socket/Socket.h	/^class Socket $/;"	c	namespace:Happy
+Start	base/ThreadPool/ThreadPool.hpp	/^    void Start(int numThreads)$/;"	f	class:ThreadPool
+Stock	base/thread/test/Factory.cc	/^  Stock(const string& name)$/;"	f	class:Stock
+Stock	base/thread/test/Factory.cc	/^class Stock : boost::noncopyable$/;"	c	file:
+Stock	base/thread/test/Factory_deadlock.cc	/^  Stock(const string& name)$/;"	f	class:Stock
+Stock	base/thread/test/Factory_deadlock.cc	/^class Stock : boost::noncopyable$/;"	c	file:
+Stock	base/thread/test/Factory_racecondition.cc	/^  Stock(const string& name)$/;"	f	class:Stock
+Stock	base/thread/test/Factory_racecondition.cc	/^class Stock : boost::noncopyable$/;"	c	file:
+StockFactory	base/thread/test/Factory.cc	/^class StockFactory : boost::noncopyable$/;"	c	namespace:version1	file:
+StockFactory	base/thread/test/Factory.cc	/^class StockFactory : boost::noncopyable$/;"	c	namespace:version2	file:
+StockFactory	base/thread/test/Factory.cc	/^class StockFactory : boost::noncopyable$/;"	c	namespace:version3	file:
+StockFactory	base/thread/test/Factory.cc	/^class StockFactory : public boost::enable_shared_from_this<StockFactory>,$/;"	c	file:
+StockFactory	base/thread/test/Factory.cc	/^class StockFactory : public boost::enable_shared_from_this<StockFactory>,$/;"	c	namespace:version4	file:
+StockFactory	base/thread/test/Factory_deadlock.cc	/^class StockFactory : boost::noncopyable$/;"	c	file:
+StockFactory	base/thread/test/Factory_racecondition.cc	/^class StockFactory : boost::noncopyable$/;"	c	file:
+Stop	base/ThreadPool/SyncQueue.hpp	/^    void Stop()$/;"	f	class:SyncQueue
+Stop	base/ThreadPool/ThreadPool.hpp	/^    void Stop()$/;"	f	class:ThreadPool
+StopThreadGroup	base/ThreadPool/ThreadPool.hpp	/^    void StopThreadGroup()$/;"	f	class:ThreadPool
+String	base/thread/test/SignalSlot_test.cc	/^  String(String&& rhs)$/;"	f	class:String
+String	base/thread/test/SignalSlot_test.cc	/^  String(const String& rhs)$/;"	f	class:String
+String	base/thread/test/SignalSlot_test.cc	/^  String(const char* str)$/;"	f	class:String
+String	base/thread/test/SignalSlot_test.cc	/^class String$/;"	c	file:
+String	base/thread/test/WeakCallback_test.cc	/^  String(String&& rhs)$/;"	f	class:String
+String	base/thread/test/WeakCallback_test.cc	/^  String(const String& rhs)$/;"	f	class:String
+String	base/thread/test/WeakCallback_test.cc	/^  String(const char* str)$/;"	f	class:String
+String	base/thread/test/WeakCallback_test.cc	/^class String$/;"	c	file:
+SyncQueue	base/ThreadPool/SyncQueue.hpp	/^    SyncQueue(int maxSize) : maxSize_(maxSize) , needStop_(false)$/;"	f	class:SyncQueue
+SyncQueue	base/ThreadPool/SyncQueue.hpp	/^class SyncQueue$/;"	c
+TESTS	base/thread/Makefile	/^TESTS= atomic_unittest \\$/;"	m
+Take	base/ThreadPool/SyncQueue.hpp	/^    void Take(T& t)$/;"	f	class:SyncQueue
+Take	base/ThreadPool/SyncQueue.hpp	/^    void Take(std::list<T>& list)$/;"	f	class:SyncQueue
+Task	base/thread/ThreadPool.h	/^  typedef boost::function<void ()> Task;$/;"	t	class:Happy::ThreadPool
+Test	base/thread/test/BlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	base/thread/test/BlockingQueue_test.cc	/^class Test$/;"	c	file:
+Test	base/thread/test/BoundedBlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	base/thread/test/BoundedBlockingQueue_test.cc	/^class Test$/;"	c	file:
+Test	base/thread/test/SingletonThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/thread/test/SingletonThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/thread/test/Singleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/thread/test/Singleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/thread/test/ThreadLocalSingleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/thread/test/ThreadLocalSingleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Test	base/thread/test/ThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	base/thread/test/ThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+Thread	base/thread/Thread.cc	/^Thread::Thread(const ThreadFunc& func, const std::string& n)$/;"	f	class:Thread
+Thread	base/thread/Thread.h	/^class Thread : boost::noncopyable$/;"	c	namespace:Happy
+Thread	base/thread1/Thread.h	/^class Thread : boost::noncopyable$/;"	c	namespace:Happy
+ThreadData	base/thread/Thread.cc	/^  ThreadData(const ThreadFunc& func,$/;"	f	struct:__anon1::ThreadData
+ThreadData	base/thread/Thread.cc	/^struct ThreadData$/;"	s	namespace:__anon1	file:
+ThreadFunc	base/thread/Thread.cc	/^  typedef muduo::Thread::ThreadFunc ThreadFunc;$/;"	t	struct:__anon1::ThreadData	file:
+ThreadFunc	base/thread/Thread.h	/^  typedef boost::function<void ()> ThreadFunc;$/;"	t	class:Happy::Thread
+ThreadFunc	base/thread1/Thread.h	/^    typedef boost::function<void()> ThreadFunc;$/;"	t	class:Happy::Thread
+ThreadLocal	base/thread/ThreadLocal.h	/^  ThreadLocal()$/;"	f	class:Happy::ThreadLocal
+ThreadLocal	base/thread/ThreadLocal.h	/^class ThreadLocal : boost::noncopyable$/;"	c	namespace:Happy
+ThreadLocalSingleton	base/thread/ThreadLocalSingleton.h	/^class ThreadLocalSingleton : boost::noncopyable$/;"	c	namespace:muduo
+ThreadNameInitializer	base/thread/Thread.cc	/^  ThreadNameInitializer()$/;"	f	class:__anon1::ThreadNameInitializer
+ThreadNameInitializer	base/thread/Thread.cc	/^class ThreadNameInitializer$/;"	c	namespace:__anon1	file:
+ThreadPool	base/ThreadPool/ThreadPool.hpp	/^    ThreadPool(int numThreads = std::thread::hardware_concurrency()) : queue_(MaxTaskCount)$/;"	f	class:ThreadPool
+ThreadPool	base/ThreadPool/ThreadPool.hpp	/^class ThreadPool$/;"	c
+ThreadPool	base/thread/ThreadPool.cc	/^ThreadPool::ThreadPool(const std::string& name)$/;"	f	class:ThreadPool
+ThreadPool	base/thread/ThreadPool.h	/^class ThreadPool : boost::noncopyable$/;"	c	namespace:Happy
+TimerCallback	net/Callbacks.h	/^    typedef boost::function<void()> TimerCallback;$/;"	t	namespace:Happy
+Waiter	base/thread/test/Waiter_test.cc	/^  Waiter()$/;"	f	class:Waiter
+Waiter	base/thread/test/Waiter_test.cc	/^class Waiter : boost::noncopyable$/;"	c	file:
+Waiter1	base/thread/test/Waiter_test.cc	/^class Waiter1 : public Waiter$/;"	c	file:
+Waiter2	base/thread/test/Waiter_test.cc	/^class Waiter2 : public Waiter$/;"	c	file:
+Waiter3	base/thread/test/Waiter_test.cc	/^class Waiter3 : public Waiter$/;"	c	file:
+Waiter4	base/thread/test/Waiter_test.cc	/^class Waiter4 : public Waiter$/;"	c	file:
+Waiter5	base/thread/test/Waiter_test.cc	/^class Waiter5 : public Waiter$/;"	c	file:
+Waiter6	base/thread/test/Waiter_test.cc	/^class Waiter6 : public Waiter$/;"	c	file:
+Waiter7	base/thread/test/Waiter_test.cc	/^class Waiter7 : public Waiter$/;"	c	file:
+Waiter8	base/thread/test/Waiter_test.cc	/^class Waiter8 : public Waiter$/;"	c	file:
+WaiterInMuduo	base/thread/test/Waiter_test.cc	/^  WaiterInMuduo()$/;"	f	class:WaiterInMuduo
+WaiterInMuduo	base/thread/test/Waiter_test.cc	/^class WaiterInMuduo : boost::noncopyable$/;"	c	file:
+WeakCallback	base/thread/WeakCallback.h	/^  WeakCallback(const std::weak_ptr<CLASS>& object,$/;"	f	class:muduo::WeakCallback
+WeakCallback	base/thread/WeakCallback.h	/^class WeakCallback$/;"	c	namespace:muduo
+_ACCEPTOR_H	net/Acceptor.h	9;"	d
+_ATOMIC_H	base/thread1/Atomic.h	9;"	d
+_CALLBACKS_H	net/Callbacks.h	9;"	d
+_CHANNEL_H	net/Channel.h	9;"	d
+_CURRENTTHREAD_H	base/thread1/CurrentThread.h	9;"	d
+_EVENTLOOP_H	net/EventLoop.h	9;"	d
+_INETADDRESS_H	net/InetAddress.h	9;"	d
+_INETADDRESS_H	net/Socket/InetAddress.h	9;"	d
+_POLLER_H	net/Poller.h	9;"	d
+_SOCKET_BASE_H	net/Socket/Socket_Base.h	9;"	d
+_SOCKET_BASE_H	net/Socket_Base.h	9;"	d
+_SOCKET_H	net/Socket.h	9;"	d
+_SOCKET_H	net/Socket/Socket.h	9;"	d
+_THREAD_H	base/thread1/Thread.h	9;"	d
+abortNotInLoopThread	net/EventLoop.cc	/^void EventLoop::abortNotInLoopThread()$/;"	f	class:EventLoop
+accept	net/Socket.cc	/^int Socket::accept(InetAddress * peeraddr)$/;"	f	class:Socket
+accept	net/Socket/Socket.cc	/^int Socket::accept(InetAddress * peeraddr)$/;"	f	class:Socket
+accept	net/Socket/Socket_Base.cc	/^int sockets::accept(int sockfd, struct sockaddr_in* addr)$/;"	f	class:Happy::sockets
+accept	net/Socket_Base.cc	/^int sockets::accept(int sockfd, struct sockaddr_in* addr)$/;"	f	class:Happy::sockets
+acceptChannel_	net/Acceptor.h	/^    Channel acceptChannel_;\/\/一个Channel,负责管理Server Socket$/;"	m	class:Happy::Acceptor
+acceptSocket_	net/Acceptor.h	/^    Socket acceptSocket_; \/\/Socket,其为Server Socket$/;"	m	class:Happy::Acceptor
+activeChannels_	net/EventLoop.h	/^    ChannelList activeChannels_; \/\/活动Channel列表 $/;"	m	class:Happy::EventLoop
+add	base/thread/Atomic.h	/^  void add(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+add	base/thread/SignalSlot.h	/^  void add(const boost::shared_ptr<SlotImpl>& slot)$/;"	f	class:muduo::Signal
+add	base/thread/test/MutualDeadLock.cc	/^  void add(Request* req)$/;"	f	class:Inventory
+add	base/thread/test/RequestInventory_test.cc	/^  void add(Request* req)$/;"	f	class:Inventory
+add	base/thread/test/RequestInventory_test2.cc	/^  void add(const RequestPtr& req)$/;"	f	class:Inventory
+add	base/thread1/Atomic.h	/^  void add(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+addAndGet	base/thread/Atomic.h	/^  T addAndGet(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+addAndGet	base/thread1/Atomic.h	/^  T addAndGet(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+addr_	net/InetAddress.h	/^    struct sockaddr_in addr_;$/;"	m	class:Happy::InetAddress	typeref:struct:Happy::InetAddress::sockaddr_in
+addr_	net/Socket/InetAddress.h	/^    struct sockaddr_in addr_;$/;"	m	class:Happy::InetAddress	typeref:struct:Happy::InetAddress::sockaddr_in
+afterFork	base/thread/Thread.cc	/^void afterFork()$/;"	f	namespace:__anon1
+assertInLoopThread	net/EventLoop.h	/^    void assertInLoopThread()$/;"	f	class:Happy::EventLoop
+assertInLoopThread	net/Poller.h	/^    void assertInLoopThread() {ownerLoop_ -> assertInLoopThread();}$/;"	f	class:Happy::Poller
+assertLocked	base/thread/Mutex.h	/^  void assertLocked()$/;"	f	class:Happy::MutexLock
+bindAddress	net/Socket.cc	/^void Socket::bindAddress(const InetAddress& addr)$/;"	f	class:Socket
+bindAddress	net/Socket/Socket.cc	/^void Socket::bindAddress(const InetAddress& addr)$/;"	f	class:Socket
+bindOrDie	net/Socket/Socket_Base.cc	/^void sockets::bindOrDie(int sockfd, const struct sockaddr_in& addr)$/;"	f	class:Happy::sockets
+bindOrDie	net/Socket_Base.cc	/^void sockets::bindOrDie(int sockfd, const struct sockaddr_in& addr)$/;"	f	class:Happy::sockets
+broadcast	base/thread/test/Waiter_test.cc	/^  void broadcast()$/;"	f	class:Waiter7
+broadcast	base/thread/test/Waiter_test.cc	/^  void broadcast()$/;"	f	class:WaiterInMuduo
+call	base/thread/SignalSlot.h	/^  void call(ARGS&&... args)$/;"	f	class:muduo::Signal
+call	base/thread/SignalSlotTrivial.h	/^  void call(ARGS&&... args)$/;"	f	class:SignalTrivial
+callingPengdingFunctors_	net/EventLoop.h	/^    bool callingPengdingFunctors_;$/;"	m	class:Happy::EventLoop
+cancel	base/thread/test/RequestInventory_test2.cc	/^  void cancel() __attribute__ ((noinline))$/;"	f	class:Request
+capacity	base/thread/BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
+cb_	base/thread/SignalSlot.h	/^  Callback cb_;$/;"	m	struct:muduo::detail::SlotImpl
+channels_	net/Poller.h	/^    ChannelMap channels_;    \/\/fd 与 channel对应$/;"	m	class:Happy::Poller
+clean	base/thread/SignalSlot.h	/^  void clean()$/;"	f	struct:muduo::detail::SignalImpl
+close	net/Socket/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
+close	net/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
+cond_	base/thread/ThreadPool.h	/^  Condition cond_;$/;"	m	class:Happy::ThreadPool
+cond_	base/thread/test/Waiter_test.cc	/^  muduo::Condition cond_;$/;"	m	class:WaiterInMuduo	file:
+cond_	base/thread/test/Waiter_test.cc	/^  pthread_cond_t cond_;$/;"	m	class:Waiter	file:
+condition_	base/thread/CountDownLatch.h	/^  Condition condition_;$/;"	m	class:muduo::CountDownLatch
+connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func)$/;"	f	class:muduo::Signal
+connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func, const boost::shared_ptr<void>& tie)$/;"	f	class:muduo::Signal
+connect	base/thread/SignalSlotTrivial.h	/^  void connect(Functor&& func)$/;"	f	class:SignalTrivial
+copyOnWrite	base/thread/SignalSlot.h	/^  void copyOnWrite()$/;"	f	struct:muduo::detail::SignalImpl
+countDown	base/thread/CountDownLatch.h	/^  void countDown()$/;"	f	class:muduo::CountDownLatch
+count_	base/thread/CountDownLatch.h	/^  int count_;$/;"	m	class:muduo::CountDownLatch
+createEventfd	net/EventLoop.cc	/^static int createEventfd()$/;"	f	file:
+createNonblockingOrDie	net/Socket/Socket_Base.cc	/^int sockets::createNonblockingOrDie()$/;"	f	class:Happy::sockets
+createNonblockingOrDie	net/Socket_Base.cc	/^int sockets::createNonblockingOrDie()$/;"	f	class:Happy::sockets
+data_	base/thread/SignalSlot.h	/^  boost::weak_ptr<Data> data_;$/;"	m	struct:muduo::detail::SlotImpl
+data_	base/thread/test/Customer.cc	/^  MapPtr data_;$/;"	m	class:CustomerData	file:
+debug	net/EventLoop.cc	/^void EventLoop::debug(  std::string  const  s)$/;"	f	class:EventLoop
+decrement	base/thread/Atomic.h	/^  void decrement()$/;"	f	class:Happy::detail::AtomicIntegerT
+decrement	base/thread1/Atomic.h	/^  void decrement()$/;"	f	class:Happy::detail::AtomicIntegerT
+deleteStock	base/thread/test/Factory.cc	/^  void deleteStock(Stock* stock)$/;"	f	class:version3::StockFactory	file:
+deleteStock	base/thread/test/Factory.cc	/^  void deleteStock(Stock* stock)$/;"	f	class:version4::StockFactory	file:
+deleteStock	base/thread/test/Factory_deadlock.cc	/^  void deleteStock(Stock* stock)$/;"	f	class:StockFactory	file:
+deleteStock	base/thread/test/Factory_racecondition.cc	/^  void deleteStock(Stock* stock)$/;"	f	class:StockFactory	file:
+destroy	base/thread/Singleton.h	/^  static void destroy()$/;"	f	class:muduo::Singleton
+destroy	base/thread/ThreadLocalSingleton.h	/^  static void destroy()$/;"	f	class:muduo::ThreadLocalSingleton
+destructor	base/thread/ThreadLocal.h	/^  static void destructor(void *x)$/;"	f	class:Happy::ThreadLocal
+detail	base/thread/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
+detail	base/thread/SignalSlot.h	/^namespace detail$/;"	n	namespace:muduo
+detail	base/thread1/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
+doPendingFunctors	net/EventLoop.cc	/^void EventLoop::doPendingFunctors()$/;"	f	class:EventLoop
+doit	base/thread/test/CopyOnWrite_test.cc	/^void Foo::doit() const$/;"	f	class:Foo
+doit	base/thread/test/ExitDeadLock.cc	/^  void doit()$/;"	f	class:GlobalObject
+doit	base/thread/test/NonRecursiveMutex_test.cc	/^void Foo::doit() const$/;"	f	class:Foo
+empty	base/thread/BoundedBlockingQueue.h	/^  bool empty() const$/;"	f	class:muduo::BoundedBlockingQueue
+enableReading	net/Channel.h	/^    void enableReading() { events_ |= kReadEvent; update(); }$/;"	f	class:Happy::Channel
+errorCallback_	net/Channel.h	/^    EventCallback errorCallback_;$/;"	m	class:Happy::Channel
+events	net/Channel.h	/^    int events() const {return events_; }$/;"	f	class:Happy::Channel
+events_	net/Channel.h	/^    int        events_;$/;"	m	class:Happy::Channel
+fd	net/Channel.h	/^    int fd() const {return fd_;}$/;"	f	class:Happy::Channel
+fd	net/Socket.h	/^    int fd() const   { return sockfd_; }$/;"	f	class:Happy::Socket
+fd	net/Socket/Socket.h	/^    int fd() const   { return sockfd_; }$/;"	f	class:Happy::Socket
+fd_	net/Channel.h	/^    const int  fd_;    $/;"	m	class:Happy::Channel
+fillActiveChannels	net/Poller.cc	/^void Poller::fillActiveChannels(int numEvents,                    $/;"	f	class:Poller
+flag_	base/ThreadPool/ThreadPool.hpp	/^    std::once_flag flag_;$/;"	m	class:ThreadPool
+foo	base/thread/test/Exception_test.cc	/^void foo()$/;"	f
+foos	base/thread/test/NonRecursiveMutex_test.cc	/^std::vector<Foo> foos;$/;"	v
+fromHostPort	net/Socket/Socket_Base.cc	/^void sockets::fromHostPort(const char* ip, uint16_t port,$/;"	f	class:Happy::sockets
+fromHostPort	net/Socket_Base.cc	/^void sockets::fromHostPort(const char* ip, uint16_t port,$/;"	f	class:Happy::sockets
+full	base/thread/BoundedBlockingQueue.h	/^  bool full() const$/;"	f	class:muduo::BoundedBlockingQueue
+func_	base/thread/Thread.cc	/^  ThreadFunc func_;$/;"	m	struct:__anon1::ThreadData	file:
+func_	base/thread/Thread.h	/^  ThreadFunc  func_;$/;"	m	class:Happy::Thread
+func_	base/thread1/Thread.h	/^    ThreadFunc func_;$/;"	m	class:Happy::Thread
+function_	base/thread/WeakCallback.h	/^  std::function<void (CLASS*, ARGS...)> function_;$/;"	m	class:muduo::WeakCallback
+functors_	base/thread/SignalSlotTrivial.h	/^  std::vector<Functor> functors_;$/;"	m	class:SignalTrivial
+g_foos	base/thread/test/CopyOnWrite_test.cc	/^FooListPtr g_foos;$/;"	v
+g_int32	base/thread/test/destruct.cc	/^int32_t g_int32 = 123;$/;"	v
+g_int64	base/thread/test/destruct.cc	/^int64_t g_int64 = 4321;$/;"	v
+g_inventory	base/thread/test/MutualDeadLock.cc	/^Inventory g_inventory;$/;"	v
+g_inventory	base/thread/test/RequestInventory_test.cc	/^Inventory g_inventory;$/;"	v
+g_inventory	base/thread/test/RequestInventory_test2.cc	/^Inventory g_inventory;$/;"	v
+g_obj	base/thread/test/ExitDeadLock.cc	/^GlobalObject g_obj;$/;"	v
+g_str	base/thread/test/destruct.cc	/^string g_str = "Hello";$/;"	v
+get	base/thread/Atomic.h	/^  T get() const$/;"	f	class:Happy::detail::AtomicIntegerT
+get	base/thread/test/Factory.cc	/^  boost::shared_ptr<Stock> get(const string& key)$/;"	f	class:StockFactory
+get	base/thread/test/Factory.cc	/^  boost::shared_ptr<Stock> get(const string& key)$/;"	f	class:version1::StockFactory
+get	base/thread/test/Factory.cc	/^  boost::shared_ptr<Stock> get(const string& key)$/;"	f	class:version2::StockFactory
+get	base/thread/test/Factory.cc	/^  boost::shared_ptr<Stock> get(const string& key)$/;"	f	class:version3::StockFactory
+get	base/thread/test/Factory.cc	/^  boost::shared_ptr<Stock> get(const string& key)$/;"	f	class:version4::StockFactory
+get	base/thread/test/Factory_deadlock.cc	/^  std::shared_ptr<Stock> get(const string& key)$/;"	f	class:StockFactory
+get	base/thread/test/Factory_racecondition.cc	/^  std::shared_ptr<Stock> get(const string& key)$/;"	f	class:StockFactory
+get	base/thread1/Atomic.h	/^  T get() const$/;"	f	class:Happy::detail::AtomicIntegerT
+getAndAdd	base/thread/Atomic.h	/^  T getAndAdd(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+getAndAdd	base/thread1/Atomic.h	/^  T getAndAdd(T x)$/;"	f	class:Happy::detail::AtomicIntegerT
+getAndIncrease	base/thread/test/Counter.cc	/^int64_t Counter::getAndIncrease()$/;"	f	class:Counter
+getAndSet	base/thread/Atomic.h	/^  T getAndSet(T newValue)$/;"	f	class:Happy::detail::AtomicIntegerT
+getAndSet	base/thread1/Atomic.h	/^  T getAndSet(T newValue)$/;"	f	class:Happy::detail::AtomicIntegerT
+getCount	base/thread/CountDownLatch.h	/^  int getCount() const$/;"	f	class:muduo::CountDownLatch
+getData	base/thread/test/Customer.cc	/^  MapPtr getData() const$/;"	f	class:CustomerData	file:
+getData	base/thread/test/RequestInventory_test.cc	/^  RequestListPtr getData() const$/;"	f	class:Inventory	file:
+getData	base/thread/test/RequestInventory_test2.cc	/^  RequestListPtr getData() const$/;"	f	class:Inventory	file:
+getInt32	base/thread/test/destruct.cc	/^int32_t getInt32()$/;"	f
+getInt64	base/thread/test/destruct.cc	/^int64_t getInt64()$/;"	f
+getPthreadMutex	base/thread/Mutex.h	/^  pthread_mutex_t* getPthreadMutex() \/* non-const *\/$/;"	f	class:Happy::MutexLock
+getSockAddrInet	net/InetAddress.h	/^    const struct sockaddr_in& getSockAddrInet() const { return addr_; }$/;"	f	class:Happy::InetAddress
+getSockAddrInet	net/Socket/InetAddress.h	/^    const struct sockaddr_in& getSockAddrInet() const { return addr_; }$/;"	f	class:Happy::InetAddress
+getString	base/thread/test/WeakCallback_test.cc	/^String getString()$/;"	f
+getString	base/thread/test/destruct.cc	/^string getString()$/;"	f
+gettid	base/thread/Thread.cc	/^pid_t gettid()$/;"	f	namespace:__anon1
+gettid	base/thread1/CurrentThread.cc	/^pid_t gettid()$/;"	f	namespace:__anon2
+handleEvent	net/Channel.cc	/^void Channel::handleEvent()$/;"	f	class:Channel
+handleRead	net/Acceptor.cc	/^void Acceptor::handleRead()$/;"	f	class:Acceptor
+handleRead	net/EventLoop.cc	/^void EventLoop::handleRead()$/;"	f	class:EventLoop
+holder_	base/thread/Mutex.h	/^  pid_t holder_;$/;"	m	class:Happy::MutexLock
+hostToNetwork16	net/Socket/Socket_Base.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:Happy::sockets
+hostToNetwork16	net/Socket_Base.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:Happy::sockets
+hostToNetwork32	net/Socket/Socket_Base.h	/^inline uint32_t hostToNetwork32(uint32_t host32)$/;"	f	namespace:Happy::sockets
+hostToNetwork32	net/Socket_Base.h	/^inline uint32_t hostToNetwork32(uint32_t host32)$/;"	f	namespace:Happy::sockets
+hostToNetwork64	net/Socket/Socket_Base.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:Happy::sockets
+hostToNetwork64	net/Socket_Base.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:Happy::sockets
+impl_	base/thread/SignalSlot.h	/^  const boost::shared_ptr<SignalImpl> impl_;$/;"	m	class:muduo::Signal
+implicit_cast	net/Socket/Socket_Base.cc	/^inline To implicit_cast(From const &f) {$/;"	f
+implicit_cast	net/Socket_Base.cc	/^inline To implicit_cast(From const &f) {$/;"	f
+increment	base/thread/Atomic.h	/^  void increment()$/;"	f	class:Happy::detail::AtomicIntegerT
+increment	base/thread1/Atomic.h	/^  void increment()$/;"	f	class:Happy::detail::AtomicIntegerT
+incrementAndGet	base/thread/Atomic.h	/^  T incrementAndGet()$/;"	f	class:Happy::detail::AtomicIntegerT
+incrementAndGet	base/thread1/Atomic.h	/^  T incrementAndGet()$/;"	f	class:Happy::detail::AtomicIntegerT
+index	net/Channel.h	/^    int index() const {return index_;}$/;"	f	class:Happy::Channel
+index_	net/Channel.h	/^    int        index_;  \/\/引索$/;"	m	class:Happy::Channel
+init	base/thread/Singleton.h	/^  static void init()$/;"	f	class:muduo::Singleton
+init	base/thread/Thread.cc	/^ThreadNameInitializer init;$/;"	m	namespace:__anon1	file:
+initAndRefresh	base/thread/test/Waiter_test.cc	/^void initAndRefresh(Waiter* waiter)$/;"	f
+instance	base/thread/Singleton.h	/^  static T& instance()$/;"	f	class:muduo::Singleton
+instance	base/thread/ThreadLocalSingleton.h	/^  static T& instance()$/;"	f	class:muduo::ThreadLocalSingleton
+isInLoopThread	net/EventLoop.h	/^    bool isInLoopThread() const {return threadId_ == CurrentThread::tid();} \/\/判断是否是当前的线程$/;"	f	class:Happy::EventLoop
+isLockedByThisThread	base/thread/Mutex.h	/^  bool isLockedByThisThread()$/;"	f	class:Happy::MutexLock
+isMainThread	base/thread/Thread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
+isMainThread	base/thread1/CurrentThread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
+isNoneEvent	net/Channel.h	/^    bool isNoneEvent() const {return events_ == kNoneEvent;}$/;"	f	class:Happy::Channel
+join	base/thread/Thread.cc	/^void Thread::join()$/;"	f	class:Thread
+joinAll	base/thread/test/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+joinAll	base/thread/test/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+joined_	base/thread/Thread.h	/^  bool        joined_;$/;"	m	class:Happy::Thread
+joined_	base/thread1/Thread.h	/^    bool joined_;$/;"	m	class:Happy::Thread
+kInaddrAny	net/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
+kInaddrAny	net/Socket/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
+kNoneEvent	net/Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
+kNoneEvent	net/Channel.h	/^    static const int kNoneEvent;$/;"	m	class:Happy::Channel
+kPollTimeMs	net/EventLoop.cc	/^const int kPollTimeMs = 100000; \/\/poll等待秒数$/;"	v
+kReadEvent	net/Channel.cc	/^const int Channel::kReadEvent = POLLIN | POLLPRI;$/;"	m	class:Channel	file:
+kReadEvent	net/Channel.h	/^    static const int kReadEvent;$/;"	m	class:Happy::Channel
+kWriteEvent	net/Channel.cc	/^const int Channel::kWriteEvent = POLLOUT;$/;"	m	class:Channel	file:
+kWriteEvent	net/Channel.h	/^    static const int kWriteEvent;$/;"	m	class:Happy::Channel
+key	base/thread/test/Factory.cc	/^  const string& key() const { return name_; }$/;"	f	class:Stock
+key	base/thread/test/Factory_deadlock.cc	/^  const string& key() const { return name_; }$/;"	f	class:Stock
+key	base/thread/test/Factory_racecondition.cc	/^  const string& key() const { return name_; }$/;"	f	class:Stock
+latch_	base/thread/test/BlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+latch_	base/thread/test/BoundedBlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+listen	net/Acceptor.cc	/^void Acceptor::listen()$/;"	f	class:Acceptor
+listen	net/Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
+listen	net/Socket/Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
+listenOrDie	net/Socket/Socket_Base.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:Happy::sockets
+listenOrDie	net/Socket_Base.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:Happy::sockets
+listenning	net/Acceptor.h	/^    bool listenning() const {return listenning_;}$/;"	f	class:Happy::Acceptor
+listenning_	net/Acceptor.h	/^    bool listenning_;$/;"	m	class:Happy::Acceptor
+lock	base/thread/Mutex.h	/^  void lock()$/;"	f	class:Happy::MutexLock
+loop	net/EventLoop.cc	/^void EventLoop::loop()$/;"	f	class:EventLoop
+loop_	net/Acceptor.h	/^    EventLoop * loop_;    \/\/每个Acceptor属于一个Eventloop$/;"	m	class:Happy::Acceptor
+loop_	net/Channel.h	/^    EventLoop* loop_;    \/\/Channel对应的Eventloop $/;"	m	class:Happy::Channel
+looping_	net/EventLoop.h	/^    bool looping_;$/;"	m	class:Happy::EventLoop
+main	base/ThreadPool/main.cc	/^int main()$/;"	f
+main	base/test/test_accept.cc	/^int main(int argc, char const *argv[])$/;"	f
+main	base/thread/test/Atomic_unittest.cc	/^int main()$/;"	f
+main	base/thread/test/BlockingQueue_test.cc	/^int main()$/;"	f
+main	base/thread/test/BoundedBlockingQueue_test.cc	/^int main()$/;"	f
+main	base/thread/test/CopyOnWrite_test.cc	/^int main()$/;"	f
+main	base/thread/test/Counter.cc	/^int main()$/;"	f
+main	base/thread/test/Customer.cc	/^int main()$/;"	f
+main	base/thread/test/Exception_test.cc	/^int main()$/;"	f
+main	base/thread/test/ExitDeadLock.cc	/^int main()$/;"	f
+main	base/thread/test/Factory.cc	/^int main()$/;"	f
+main	base/thread/test/Factory_deadlock.cc	/^int main()$/;"	f
+main	base/thread/test/Factory_racecondition.cc	/^int main()$/;"	f
+main	base/thread/test/Fork_test.cc	/^int main()$/;"	f
+main	base/thread/test/MutualDeadLock.cc	/^int main()$/;"	f
+main	base/thread/test/NonRecursiveMutex_test.cc	/^int main()$/;"	f
+main	base/thread/test/Observer.cc	/^int main()$/;"	f
+main	base/thread/test/Observer_safe.cc	/^int main()$/;"	f
+main	base/thread/test/RequestInventory_test.cc	/^int main()$/;"	f
+main	base/thread/test/RequestInventory_test2.cc	/^int main()$/;"	f
+main	base/thread/test/SelfDeadLock.cc	/^int main()$/;"	f
+main	base/thread/test/SingletonThreadLocal_test.cc	/^int main()$/;"	f
+main	base/thread/test/Singleton_test.cc	/^int main()$/;"	f
+main	base/thread/test/ThreadLocalSingleton_test.cc	/^int main()$/;"	f
+main	base/thread/test/ThreadLocal_test.cc	/^int main()$/;"	f
+main	base/thread/test/ThreadPool_test.cc	/^int main()$/;"	f
+main	base/thread/test/Thread_test.cc	/^int main()$/;"	f
+main	base/thread/test/Waiter_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	base/thread/test/destruct.cc	/^int main()$/;"	f
+main	base/thread1/main.cpp	/^int main()$/;"	f
+main	net/test/test1.cc	/^int main()$/;"	f
+main	net/test/test2.cc	/^int main()$/;"	f
+main	net/test/test_Acceptor.cc	/^int main()$/;"	f
+main	net/test_Acceptor.cc	/^int main()$/;"	f
+makeWeakCallback	base/thread/WeakCallback.h	/^WeakCallback<CLASS, ARGS...> makeWeakCallback(const std::shared_ptr<CLASS>& object,$/;"	f	namespace:muduo
+maxSize_	base/ThreadPool/SyncQueue.hpp	/^    int maxSize_;$/;"	m	class:SyncQueue
+memberFunc	base/thread/test/Thread_test.cc	/^  void memberFunc()$/;"	f	class:Foo
+memberFunc2	base/thread/test/Thread_test.cc	/^  void memberFunc2(const std::string& text)$/;"	f	class:Foo
+message_	base/thread/Exception.h	/^  std::string message_;$/;"	m	class:muduo::Exception
+more	base/thread/test/Singleton_test.cc	/^  void more()$/;"	f	class:Destruct
+more	base/thread/test/Singleton_test.cc	/^void Destruct<0>::more()$/;"	f	class:Destruct
+muduo	base/thread/BlockingQueue.h	/^namespace muduo$/;"	n
+muduo	base/thread/BoundedBlockingQueue.h	/^namespace muduo$/;"	n
+muduo	base/thread/CountDownLatch.h	/^namespace muduo$/;"	n
+muduo	base/thread/Exception.h	/^namespace muduo$/;"	n
+muduo	base/thread/SignalSlot.h	/^namespace muduo$/;"	n
+muduo	base/thread/Singleton.h	/^namespace muduo$/;"	n
+muduo	base/thread/ThreadLocalSingleton.h	/^namespace muduo$/;"	n
+muduo	base/thread/WeakCallback.h	/^namespace muduo$/;"	n
+mutex	base/thread/test/CopyOnWrite_test.cc	/^MutexLock mutex;$/;"	v
+mutex	base/thread/test/NonRecursiveMutex_test.cc	/^MutexLock mutex;$/;"	v
+mutex_	base/ThreadPool/SyncQueue.hpp	/^    std::mutex mutex_;\/\/ 互斥锁$/;"	m	class:SyncQueue
+mutex_	base/thread/BlockingQueue.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::BlockingQueue
+mutex_	base/thread/BoundedBlockingQueue.h	/^  mutable MutexLock          mutex_;$/;"	m	class:muduo::BoundedBlockingQueue
+mutex_	base/thread/Condition.h	/^  MutexLock& mutex_;$/;"	m	class:Happy::Condition
+mutex_	base/thread/CountDownLatch.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::CountDownLatch
+mutex_	base/thread/Mutex.h	/^  MutexLock& mutex_;$/;"	m	class:Happy::MutexLockGuard
+mutex_	base/thread/Mutex.h	/^  pthread_mutex_t mutex_;$/;"	m	class:Happy::MutexLock
+mutex_	base/thread/SignalSlot.h	/^  MutexLock mutex_;$/;"	m	struct:muduo::detail::SignalImpl
+mutex_	base/thread/ThreadPool.h	/^  MutexLock mutex_;$/;"	m	class:Happy::ThreadPool
+mutex_	base/thread/test/Counter.cc	/^  mutable MutexLock mutex_;$/;"	m	class:Counter	file:
+mutex_	base/thread/test/Customer.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:CustomerData	file:
+mutex_	base/thread/test/ExitDeadLock.cc	/^  MutexLock mutex_;$/;"	m	class:GlobalObject	file:
+mutex_	base/thread/test/Factory.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:StockFactory	file:
+mutex_	base/thread/test/Factory.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:version1::StockFactory	file:
+mutex_	base/thread/test/Factory.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:version2::StockFactory	file:
+mutex_	base/thread/test/Factory.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:version3::StockFactory	file:
+mutex_	base/thread/test/Factory.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:version4::StockFactory	file:
+mutex_	base/thread/test/Factory_deadlock.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:StockFactory	file:
+mutex_	base/thread/test/Factory_racecondition.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:StockFactory	file:
+mutex_	base/thread/test/MutualDeadLock.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Inventory	file:
+mutex_	base/thread/test/MutualDeadLock.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Request	file:
+mutex_	base/thread/test/Observer_safe.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Observable	file:
+mutex_	base/thread/test/RequestInventory_test.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Inventory	file:
+mutex_	base/thread/test/RequestInventory_test.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Request	file:
+mutex_	base/thread/test/RequestInventory_test2.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Inventory	file:
+mutex_	base/thread/test/RequestInventory_test2.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Request	file:
+mutex_	base/thread/test/SelfDeadLock.cc	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:Request	file:
+mutex_	base/thread/test/Waiter_test.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:WaiterInMuduo	file:
+mutex_	base/thread/test/Waiter_test.cc	/^  pthread_mutex_t mutex_;$/;"	m	class:Waiter	file:
+mutex_	net/EventLoop.h	/^    std::mutex mutex_;$/;"	m	class:Happy::EventLoop
+name	base/thread/Thread.cc	/^const char* CurrentThread::name()$/;"	f	class:CurrentThread
+name	base/thread/Thread.h	/^  const std::string& name() const { return name_; }$/;"	f	class:Happy::Thread
+name	base/thread/test/SingletonThreadLocal_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
+name	base/thread/test/Singleton_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
+name	base/thread/test/ThreadLocalSingleton_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
+name	base/thread/test/ThreadLocal_test.cc	/^  const std::string& name() const { return name_; }$/;"	f	class:Test
+name	base/thread1/CurrentThread.cc	/^const char* CurrentThread::name()$/;"	f	class:CurrentThread
+name_	base/thread/Thread.cc	/^  std::string name_;$/;"	m	struct:__anon1::ThreadData	file:
+name_	base/thread/Thread.h	/^  std::string name_;$/;"	m	class:Happy::Thread
+name_	base/thread/ThreadPool.h	/^  std::string name_;$/;"	m	class:Happy::ThreadPool
+name_	base/thread/test/Factory.cc	/^  string name_;$/;"	m	class:Stock	file:
+name_	base/thread/test/Factory_deadlock.cc	/^  string name_;$/;"	m	class:Stock	file:
+name_	base/thread/test/Factory_racecondition.cc	/^  string name_;$/;"	m	class:Stock	file:
+name_	base/thread/test/SingletonThreadLocal_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
+name_	base/thread/test/Singleton_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
+name_	base/thread/test/ThreadLocalSingleton_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
+name_	base/thread/test/ThreadLocal_test.cc	/^  std::string name_;$/;"	m	class:Test	file:
+name_	base/thread1/Thread.h	/^    std::string name_; \/\/名字$/;"	m	class:Happy::Thread
+needStop_	base/ThreadPool/SyncQueue.hpp	/^    bool needStop_;$/;"	m	class:SyncQueue
+networkToHost16	net/Socket/Socket_Base.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:Happy::sockets
+networkToHost16	net/Socket_Base.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:Happy::sockets
+networkToHost32	net/Socket/Socket_Base.h	/^inline uint32_t networkToHost32(uint32_t net32)$/;"	f	namespace:Happy::sockets
+networkToHost32	net/Socket_Base.h	/^inline uint32_t networkToHost32(uint32_t net32)$/;"	f	namespace:Happy::sockets
+networkToHost64	net/Socket/Socket_Base.h	/^inline uint64_t networkToHost64(uint64_t net64)$/;"	f	namespace:Happy::sockets
+networkToHost64	net/Socket_Base.h	/^inline uint64_t networkToHost64(uint64_t net64)$/;"	f	namespace:Happy::sockets
+newConnection	net/test/test_Acceptor.cc	/^void newConnection(int sockfd, const Happy::InetAddress& peerAddr)$/;"	f
+newConnection	net/test_Acceptor.cc	/^void newConnection(int sockfd, const Happy::InetAddress& peerAddr)$/;"	f
+newConnectionCallback_	net/Acceptor.h	/^    NewConnectionCallback newConnectionCallback_;$/;"	m	class:Happy::Acceptor
+notEmpty_	base/ThreadPool/SyncQueue.hpp	/^    std::condition_variable notEmpty_; \/\/非空条件变量$/;"	m	class:SyncQueue
+notEmpty_	base/thread/BlockingQueue.h	/^  Condition         notEmpty_;$/;"	m	class:muduo::BlockingQueue
+notEmpty_	base/thread/BoundedBlockingQueue.h	/^  Condition                  notEmpty_;$/;"	m	class:muduo::BoundedBlockingQueue
+notFull_	base/ThreadPool/SyncQueue.hpp	/^    std::condition_variable notFull_;  \/\/非满条件变量$/;"	m	class:SyncQueue
+notFull_	base/thread/BoundedBlockingQueue.h	/^  Condition                  notFull_;$/;"	m	class:muduo::BoundedBlockingQueue
+notify	base/thread/Condition.h	/^  void notify()$/;"	f	class:Happy::Condition
+notifyAll	base/thread/Condition.h	/^  void notifyAll()$/;"	f	class:Happy::Condition
+notifyObservers	base/thread/test/Observer.cc	/^  void notifyObservers()$/;"	f	class:Observable
+notifyObservers	base/thread/test/Observer_safe.cc	/^  void notifyObservers()$/;"	f	class:Observable
+numCreated	base/thread/Thread.h	/^  static int numCreated() { return numCreated_.get(); }$/;"	f	class:Happy::Thread
+numCreated_	base/thread/Thread.cc	/^AtomicInt32 Thread::numCreated_;$/;"	m	class:Thread	file:
+numCreated_	base/thread/Thread.h	/^  static AtomicInt32 numCreated_;$/;"	m	class:Happy::Thread
+object_	base/thread/WeakCallback.h	/^  std::weak_ptr<CLASS> object_;$/;"	m	class:muduo::WeakCallback
+observe	base/thread/test/Observer.cc	/^void Observer::observe(Observable* s)$/;"	f	class:Observer
+observe	base/thread/test/Observer_safe.cc	/^void Observer::observe(Observable* s)$/;"	f	class:Observer
+observers_	base/thread/test/Observer.cc	/^  std::vector<Observer*> observers_;$/;"	m	class:Observable	file:
+observers_	base/thread/test/Observer_safe.cc	/^  std::vector<boost::weak_ptr<Observer> > observers_;$/;"	m	class:Observable	file:
+one	base/thread/test/SignalSlot_test.cc	/^void Foo::one(int x)$/;"	f	class:Foo
+one	base/thread/test/WeakCallback_test.cc	/^void Foo::one(int x)$/;"	f	class:Foo
+oneString	base/thread/test/SignalSlot_test.cc	/^void Foo::oneString(const String& str)$/;"	f	class:Foo
+oneString	base/thread/test/WeakCallback_test.cc	/^void Foo::oneString(const String& str)$/;"	f	class:Foo
+oneStringRR	base/thread/test/WeakCallback_test.cc	/^void Foo::oneStringRR(String&& str)$/;"	f	class:Foo
+onec	base/thread/test/SignalSlot_test.cc	/^void Foo::onec(int x) const$/;"	f	class:Foo
+onec	base/thread/test/WeakCallback_test.cc	/^void Foo::onec(int x) const$/;"	f	class:Foo
+oner	base/thread/test/WeakCallback_test.cc	/^void Foo::oner(int& x)$/;"	f	class:Foo
+operator ()	base/thread/WeakCallback.h	/^  void operator()(ARGS&&... args) const$/;"	f	class:muduo::WeakCallback
+operator =	base/thread/test/Counter.cc	/^Counter& Counter::operator=(const Counter& rhs)$/;"	f	class:Counter
+ownerLoop	net/Channel.h	/^    EventLoop * ownerLoop() {return loop_;}$/;"	f	class:Happy::Channel
+ownerLoop_	net/Poller.h	/^    EventLoop *  ownerLoop_; \/\/ 其对应的EvenLoop$/;"	m	class:Happy::Poller
+pcond_	base/thread/Condition.h	/^  pthread_cond_t pcond_;$/;"	m	class:Happy::Condition
+pendingFunctors_	net/EventLoop.h	/^    std::vector<Functor> pendingFunctors_;$/;"	m	class:Happy::EventLoop
+pkey_	base/thread/ThreadLocal.h	/^  pthread_key_t pkey_;$/;"	m	class:Happy::ThreadLocal
+poll	net/Poller.cc	/^int  Poller::poll(int timeoutMs, ChannelList * activeChannels)$/;"	f	class:Poller
+poller_	net/EventLoop.h	/^    boost::scoped_ptr<Poller> poller_; \/\/禁止拷贝与赋值的智能指针$/;"	m	class:Happy::EventLoop
+pollfds_	net/Poller.h	/^    PollFdList   pollfds_;   \/\/存储fd$/;"	m	class:Happy::Poller
+ponce_	base/thread/Singleton.h	/^  static pthread_once_t ponce_;$/;"	m	class:muduo::Singleton
+ponce_	base/thread/Singleton.h	/^pthread_once_t Singleton<T>::ponce_ = PTHREAD_ONCE_INIT;$/;"	m	class:muduo::Singleton
+post	base/thread/test/CopyOnWrite_test.cc	/^void post(const Foo& f)$/;"	f
+post	base/thread/test/NonRecursiveMutex_test.cc	/^void post(const Foo& f)$/;"	f
+print	base/thread/test/Fork_test.cc	/^void print()$/;"	f
+print	base/thread/test/MutualDeadLock.cc	/^  void print() const __attribute__ ((noinline))$/;"	f	class:Request
+print	base/thread/test/RequestInventory_test.cc	/^  void print() const __attribute__ ((noinline))$/;"	f	class:Request
+print	base/thread/test/RequestInventory_test2.cc	/^  void print() const __attribute__ ((noinline))$/;"	f	class:Request
+print	base/thread/test/SelfDeadLock.cc	/^  void print() const \/\/ __attribute__ ((noinline))$/;"	f	class:Request
+print	base/thread/test/SingletonThreadLocal_test.cc	/^void print()$/;"	f
+print	base/thread/test/ThreadLocal_test.cc	/^void print()$/;"	f
+print	base/thread/test/ThreadPool_test.cc	/^void print()$/;"	f
+printAll	base/thread/test/MutualDeadLock.cc	/^void Inventory::printAll() const$/;"	f	class:Inventory
+printAll	base/thread/test/RequestInventory_test.cc	/^void Inventory::printAll() const$/;"	f	class:Inventory
+printAll	base/thread/test/RequestInventory_test2.cc	/^void Inventory::printAll() const$/;"	f	class:Inventory
+printString	base/thread/test/ThreadPool_test.cc	/^void printString(const std::string& str)$/;"	f
+process	base/thread/test/MutualDeadLock.cc	/^  void process() \/\/ __attribute__ ((noinline))$/;"	f	class:Request
+process	base/thread/test/RequestInventory_test.cc	/^  void process() \/\/ __attribute__ ((noinline))$/;"	f	class:Request
+process	base/thread/test/RequestInventory_test2.cc	/^  void process() \/\/ __attribute__ ((noinline))$/;"	f	class:Request
+process	base/thread/test/SelfDeadLock.cc	/^  void process() \/\/ __attribute__ ((noinline))$/;"	f	class:Request
+pthreadId_	base/thread/Thread.h	/^  pthread_t   pthreadId_;$/;"	m	class:Happy::Thread
+pthreadId_	base/thread1/Thread.h	/^    pthread_t pthreadId_;$/;"	m	class:Happy::Thread
+put	base/thread/BlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BlockingQueue
+put	base/thread/BoundedBlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BoundedBlockingQueue
+query	base/thread/test/Customer.cc	/^int CustomerData::query(const string& customer, const string& stock) const$/;"	f	class:CustomerData
+queueInLoop	net/EventLoop.cc	/^void EventLoop::queueInLoop(const Functor & Callback)$/;"	f	class:EventLoop
+queue_	base/ThreadPool/SyncQueue.hpp	/^    std::list<T> queue_; $/;"	m	class:SyncQueue
+queue_	base/ThreadPool/ThreadPool.hpp	/^    SyncQueue<Task> queue_;$/;"	m	class:ThreadPool
+queue_	base/thread/BlockingQueue.h	/^  std::deque<T>     queue_;$/;"	m	class:muduo::BlockingQueue
+queue_	base/thread/BoundedBlockingQueue.h	/^  boost::circular_buffer<T>  queue_;$/;"	m	class:muduo::BoundedBlockingQueue
+queue_	base/thread/ThreadPool.h	/^  std::deque<Task> queue_;$/;"	m	class:Happy::ThreadPool
+queue_	base/thread/test/BlockingQueue_test.cc	/^  muduo::BlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+queue_	base/thread/test/BoundedBlockingQueue_test.cc	/^  muduo::BoundedBlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+quit	net/EventLoop.cc	/^void EventLoop::quit()$/;"	f	class:EventLoop
+quit_	net/EventLoop.h	/^    bool quit_;$/;"	m	class:Happy::EventLoop
+readCallback_	net/Channel.h	/^    EventCallback readCallback_;$/;"	m	class:Happy::Channel
+register_	base/thread/test/Observer.cc	/^void Observable::register_(Observer* x)$/;"	f	class:Observable
+register_	base/thread/test/Observer_safe.cc	/^void Observable::register_(boost::weak_ptr<Observer> x)$/;"	f	class:Observable
+remove	base/thread/test/MutualDeadLock.cc	/^  void remove(Request* req) __attribute__ ((noinline))$/;"	f	class:Inventory
+remove	base/thread/test/RequestInventory_test.cc	/^  void remove(Request* req) \/\/ __attribute__ ((noinline))$/;"	f	class:Inventory
+remove	base/thread/test/RequestInventory_test2.cc	/^  void remove(const RequestPtr& req) \/\/ __attribute__ ((noinline))$/;"	f	class:Inventory
+removeStock	base/thread/test/Factory.cc	/^  void removeStock(Stock* stock)$/;"	f	class:StockFactory	file:
+requests_	base/thread/test/MutualDeadLock.cc	/^  std::set<Request*> requests_;$/;"	m	class:Inventory	file:
+requests_	base/thread/test/RequestInventory_test.cc	/^  RequestListPtr requests_;$/;"	m	class:Inventory	file:
+requests_	base/thread/test/RequestInventory_test2.cc	/^  RequestListPtr requests_;$/;"	m	class:Inventory	file:
+revents_	net/Channel.h	/^    int        revents_;$/;"	m	class:Happy::Channel
+run	base/thread/ThreadPool.cc	/^void ThreadPool::run(const Task& task)$/;"	f	class:ThreadPool
+run	base/thread/test/BlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+run	base/thread/test/BoundedBlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+runInLoop	net/EventLoop.cc	/^void EventLoop::runInLoop(const Functor & Callback)$/;"	f	class:EventLoop
+runInThread	base/thread/Thread.cc	/^  void runInThread()$/;"	f	struct:__anon1::ThreadData
+runInThread	base/thread/ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	class:ThreadPool
+runServer	base/thread/test/Waiter_test.cc	/^void runServer(Waiter* waiter, int sec)$/;"	f
+running_	base/ThreadPool/ThreadPool.hpp	/^    std::atomic_bool running_;$/;"	m	class:ThreadPool
+running_	base/thread/ThreadPool.h	/^  bool running_;$/;"	m	class:Happy::ThreadPool
+setErrorCallback	net/Channel.h	/^    void setErrorCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
+setName	base/thread/test/SingletonThreadLocal_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/thread/test/Singleton_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/thread/test/ThreadLocalSingleton_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
+setName	base/thread/test/ThreadLocal_test.cc	/^  void setName(const std::string& n) { name_ = n; }$/;"	f	class:Test
+setNewConnectionCallback	net/Acceptor.h	/^    void setNewConnectionCallback(const NewConnectionCallback& Callback)$/;"	f	class:Happy::Acceptor
+setNonBlockAndCloseOnExec	net/Socket/Socket_Base.cc	/^void setNonBlockAndCloseOnExec(int sockfd)$/;"	f	namespace:Happy
+setNonBlockAndCloseOnExec	net/Socket_Base.cc	/^void setNonBlockAndCloseOnExec(int sockfd)$/;"	f	namespace:Happy
+setReadCallback	net/Channel.h	/^    void setReadCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
+setReuseAddr	net/Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Socket
+setReuseAddr	net/Socket/Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Socket
+setSockAddrInet	net/InetAddress.h	/^    void setSockAddrInet(const struct sockaddr_in& addr) {addr_=  addr;};$/;"	f	class:Happy::InetAddress
+setSockAddrInet	net/Socket/InetAddress.h	/^    void setSockAddrInet(const struct sockaddr_in& addr) {addr_=  addr;};$/;"	f	class:Happy::InetAddress
+setWriteCallback	net/Channel.h	/^    void setWriteCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
+set_index	net/Channel.h	/^    void set_index(int idx) {index_ = idx;} $/;"	f	class:Happy::Channel
+set_revents	net/Channel.h	/^    void set_revents(int revt) { revents_ = revt; }$/;"	f	class:Happy::Channel
+sigalarm	base/thread/test/Waiter_test.cc	/^void sigalarm(int)$/;"	f
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter3	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter4	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter5	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter6	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter7	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter8	file:
+signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:WaiterInMuduo	file:
+size	base/thread/BlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BlockingQueue
+size	base/thread/BoundedBlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BoundedBlockingQueue
+sleepMs	base/thread/test/Factory_deadlock.cc	/^void sleepMs(int ms)$/;"	f
+sleepMs	base/thread/test/Factory_racecondition.cc	/^void sleepMs(int ms)$/;"	f
+slots_	base/thread/SignalSlot.h	/^  boost::shared_ptr<SlotList> slots_;$/;"	m	struct:muduo::detail::SignalImpl
+sockaddr_cast	net/Socket/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* addr)$/;"	f	namespace:Happy
+sockaddr_cast	net/Socket/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
+sockaddr_cast	net/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* addr)$/;"	f	namespace:Happy
+sockaddr_cast	net/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
+sockets	net/Socket/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
+sockets	net/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
+sockfd_	net/Socket.h	/^    const int sockfd_;$/;"	m	class:Happy::Socket
+sockfd_	net/Socket/Socket.h	/^    const int sockfd_;$/;"	m	class:Happy::Socket
+someFunctionMayCallExit	base/thread/test/ExitDeadLock.cc	/^void someFunctionMayCallExit()$/;"	f
+sone	base/thread/test/SignalSlot_test.cc	/^void Foo::sone(int x)$/;"	f	class:Foo
+soneString	base/thread/test/SignalSlot_test.cc	/^void Foo::soneString(const String& str)$/;"	f	class:Foo
+stackTrace	base/thread/Exception.cc	/^const char* Exception::stackTrace() const throw()$/;"	f	class:Exception
+stack_	base/thread/Exception.h	/^  std::string stack_;$/;"	m	class:muduo::Exception
+start	base/thread/Thread.cc	/^void Thread::start()$/;"	f	class:Thread
+start	base/thread/ThreadPool.cc	/^void ThreadPool::start(int numThreads)$/;"	f	class:ThreadPool
+startThread	base/thread/Thread.cc	/^void* startThread(void* obj)$/;"	f	namespace:__anon1
+started	base/thread/Thread.h	/^  bool started() const { return started_; }$/;"	f	class:Happy::Thread
+started	base/thread1/Thread.h	/^    bool started(){}$/;"	f	class:Happy::Thread
+started_	base/thread/Thread.h	/^  bool        started_;$/;"	m	class:Happy::Thread
+started_	base/thread1/Thread.h	/^    bool started_;$/;"	m	class:Happy::Thread
+stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::shared_ptr<Stock> > stocks_;$/;"	m	class:version1::StockFactory	file:
+stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:StockFactory	file:
+stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:version2::StockFactory	file:
+stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:version3::StockFactory	file:
+stocks_	base/thread/test/Factory.cc	/^  std::map<string, boost::weak_ptr<Stock> > stocks_;$/;"	m	class:version4::StockFactory	file:
+stocks_	base/thread/test/Factory_deadlock.cc	/^  std::unordered_map<string, std::weak_ptr<Stock> > stocks_;$/;"	m	class:StockFactory	file:
+stocks_	base/thread/test/Factory_racecondition.cc	/^  std::unordered_map<string, std::weak_ptr<Stock> > stocks_;$/;"	m	class:StockFactory	file:
+stop	base/thread/ThreadPool.cc	/^void ThreadPool::stop()$/;"	f	class:ThreadPool
+subject_	base/thread/test/Observer.cc	/^  Observable* subject_;$/;"	m	class:Observer	file:
+subject_	base/thread/test/Observer_safe.cc	/^  Observable* subject_;$/;"	m	class:Observer	file:
+swap	base/thread/test/Counter.cc	/^void swap(Counter& a, Counter& b)$/;"	f
+szero	base/thread/test/SignalSlot_test.cc	/^void Foo::szero()$/;"	f	class:Foo
+t_cachedTid	base/thread/Thread.cc	/^__thread pid_t t_cachedTid = 0;$/;"	m	namespace:__anon1	file:
+t_cachedTid	base/thread1/CurrentThread.cc	/^__thread pid_t t_cachedTid = 0;$/;"	m	namespace:__anon2	file:
+t_threadName	base/thread/Thread.cc	/^  __thread const char* t_threadName = "unknown";$/;"	m	namespace:Happy::CurrentThread	file:
+t_threadName	base/thread1/CurrentThread.cc	/^  __thread const char* t_threadName = "unknown";$/;"	m	namespace:Happy::CurrentThread	file:
+t_value_	base/thread/ThreadLocalSingleton.h	/^  static __thread T* t_value_;$/;"	m	class:muduo::ThreadLocalSingleton
+t_value_	base/thread/ThreadLocalSingleton.h	/^__thread T* ThreadLocalSingleton<T>::t_value_ = 0;$/;"	m	class:muduo::ThreadLocalSingleton
+take	base/thread/BlockingQueue.h	/^  T take()$/;"	f	class:muduo::BlockingQueue
+take	base/thread/BoundedBlockingQueue.h	/^  T take()$/;"	f	class:muduo::BoundedBlockingQueue
+take	base/thread/ThreadPool.cc	/^ThreadPool::Task ThreadPool::take()$/;"	f	class:ThreadPool
+test	base/thread/test/Exception_test.cc	/^  void test()$/;"	f	class:Bar
+testLongLifeFactory	base/thread/test/Factory.cc	/^void testLongLifeFactory()$/;"	f
+testObj1	base/thread/test/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj1;$/;"	v
+testObj2	base/thread/test/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj2;$/;"	v
+testShortLifeFactory	base/thread/test/Factory.cc	/^void testShortLifeFactory()$/;"	f
+threadB	base/thread/test/Factory_deadlock.cc	/^void threadB(StockFactory* factory)$/;"	f
+threadB	base/thread/test/Factory_racecondition.cc	/^void threadB(StockFactory* factory)$/;"	f
+threadFunc	base/thread/test/BlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threadFunc	base/thread/test/BoundedBlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threadFunc	base/thread/test/MutualDeadLock.cc	/^void threadFunc()$/;"	f
+threadFunc	base/thread/test/RequestInventory_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/thread/test/RequestInventory_test2.cc	/^void threadFunc()$/;"	f
+threadFunc	base/thread/test/SingletonThreadLocal_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+threadFunc	base/thread/test/Singleton_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/thread/test/ThreadLocalSingleton_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+threadFunc	base/thread/test/ThreadLocal_test.cc	/^void threadFunc()$/;"	f
+threadFunc	base/thread/test/Thread_test.cc	/^void threadFunc()$/;"	f
+threadFunc	net/test/test2.cc	/^void threadFunc()$/;"	f
+threadFunc2	base/thread/test/Thread_test.cc	/^void threadFunc2(int x)$/;"	f
+threadFunc3	base/thread/test/Thread_test.cc	/^void threadFunc3()$/;"	f
+threadId_	net/EventLoop.h	/^    const pid_t threadId_;  \/\/线程ID$/;"	m	class:Happy::EventLoop
+threadgroup_	base/ThreadPool/ThreadPool.hpp	/^    std::list<std::shared_ptr<std::thread>> threadgroup_;$/;"	m	class:ThreadPool
+threads_	base/thread/ThreadPool.h	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Happy::ThreadPool
+threads_	base/thread/test/BlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+threads_	base/thread/test/BoundedBlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+tid	base/thread/Thread.cc	/^pid_t CurrentThread::tid()$/;"	f	class:CurrentThread
+tid	base/thread/Thread.h	/^  pid_t tid() const { return *tid_; }$/;"	f	class:Happy::Thread
+tid	base/thread1/CurrentThread.cc	/^pid_t CurrentThread::tid()$/;"	f	class:CurrentThread
+tid_	base/thread/Thread.h	/^  boost::shared_ptr<pid_t> tid_;$/;"	m	class:Happy::Thread
+tid_	base/thread1/Thread.h	/^    boost::shared_ptr<pid_t> tid_;$/;"	m	class:Happy::Thread
+tie_	base/thread/SignalSlot.h	/^  boost::weak_ptr<void> tie_;$/;"	m	struct:muduo::detail::SlotImpl
+tied_	base/thread/SignalSlot.h	/^  bool tied_;$/;"	m	struct:muduo::detail::SlotImpl
+toHostPort	net/InetAddress.cc	/^std::string InetAddress::toHostPort() const$/;"	f	class:Happy::InetAddress
+toHostPort	net/Socket/InetAddress.cc	/^std::string InetAddress::toHostPort() const$/;"	f	class:Happy::InetAddress
+toHostPort	net/Socket/Socket_Base.cc	/^void sockets::toHostPort(char* buf, size_t size,$/;"	f	class:Happy::sockets
+toHostPort	net/Socket_Base.cc	/^void sockets::toHostPort(char* buf, size_t size,$/;"	f	class:Happy::sockets
+traverse	base/thread/test/CopyOnWrite_test.cc	/^void traverse()$/;"	f
+traverse	base/thread/test/NonRecursiveMutex_test.cc	/^void traverse()$/;"	f
+unlock	base/thread/Mutex.h	/^  void unlock()$/;"	f	class:Happy::MutexLock
+unregister	base/thread/test/Observer.cc	/^void Observable::unregister(Observer* x)$/;"	f	class:Observable
+update	base/thread/test/Customer.cc	/^void CustomerData::update(const string& customer, const EntryList& entries)$/;"	f	class:CustomerData
+update	base/thread/test/Customer.cc	/^void CustomerData::update(const string& message)$/;"	f	class:CustomerData
+update	base/thread/test/Observer.cc	/^  virtual void update()$/;"	f	class:Foo	file:
+update	base/thread/test/Observer_safe.cc	/^  virtual void update()$/;"	f	class:Foo	file:
+update	net/Channel.cc	/^void Channel::update()$/;"	f	class:Channel
+updateChannel	net/EventLoop.cc	/^void EventLoop::updateChannel(Channel * channel )$/;"	f	class:EventLoop
+updateChannel	net/Poller.cc	/^void Poller::updateChannel(Channel* channel)$/;"	f	class:Poller
+value	base/thread/ThreadLocal.h	/^  T& value()$/;"	f	class:Happy::ThreadLocal
+value	base/thread/test/Counter.cc	/^int64_t Counter::value() const$/;"	f	class:Counter
+value_	base/thread/Atomic.h	/^  volatile T value_;$/;"	m	class:Happy::detail::AtomicIntegerT
+value_	base/thread/Singleton.h	/^  static T*             value_;$/;"	m	class:muduo::Singleton
+value_	base/thread/Singleton.h	/^T* Singleton<T>::value_ = NULL;$/;"	m	class:muduo::Singleton
+value_	base/thread/test/Counter.cc	/^  int64_t value_;$/;"	m	class:Counter	file:
+value_	base/thread1/Atomic.h	/^  volatile T value_;$/;"	m	class:Happy::detail::AtomicIntegerT
+version1	base/thread/test/Factory.cc	/^namespace version1$/;"	n	file:
+version2	base/thread/test/Factory.cc	/^namespace version2$/;"	n	file:
+version3	base/thread/test/Factory.cc	/^namespace version3$/;"	n	file:
+version4	base/thread/test/Factory.cc	/^namespace version4$/;"	n	file:
+wait	base/thread/Condition.h	/^  void wait()$/;"	f	class:Happy::Condition
+wait	base/thread/CountDownLatch.h	/^  void wait()$/;"	f	class:muduo::CountDownLatch
+wait	base/thread/test/Waiter_test.cc	/^  void wait()$/;"	f	class:WaiterInMuduo
+waitForSeconds	base/thread/Condition.h	/^  bool waitForSeconds(int seconds)$/;"	f	class:Happy::Condition
+wakeup	net/EventLoop.cc	/^void EventLoop::wakeup()$/;"	f	class:EventLoop
+wakeupChannel_	net/EventLoop.h	/^    boost::scoped_ptr<Channel> wakeupChannel_;$/;"	m	class:Happy::EventLoop
+wakeupFd_	net/EventLoop.h	/^    int wakeupFd_;$/;"	m	class:Happy::EventLoop
+weakDeleteCallback	base/thread/test/Factory.cc	/^  static void weakDeleteCallback(const boost::weak_ptr<StockFactory>& wkFactory,$/;"	f	class:StockFactory	file:
+what	base/thread/Exception.cc	/^const char* Exception::what() const throw()$/;"	f	class:Exception
+wkTid_	base/thread/Thread.cc	/^  boost::weak_ptr<pid_t> wkTid_;$/;"	m	struct:__anon1::ThreadData	file:
+writeCallback_	net/Channel.h	/^    EventCallback writeCallback_;$/;"	m	class:Happy::Channel
+x	base/thread/test/Fork_test.cc	/^__thread int x = 0;$/;"	v
+x_	base/thread/test/RequestInventory_test.cc	/^  int x_;$/;"	m	class:Request	file:
+x_	base/thread/test/RequestInventory_test2.cc	/^  int x_;$/;"	m	class:Request	file:
+x_	base/thread/test/Thread_test.cc	/^  double x_;$/;"	m	class:Foo	file:
+zero	base/thread/test/SignalSlot_test.cc	/^void Foo::zero()$/;"	f	class:Foo
+zero	base/thread/test/WeakCallback_test.cc	/^void Foo::zero()$/;"	f	class:Foo
+zeroc	base/thread/test/SignalSlot_test.cc	/^void Foo::zeroc() const$/;"	f	class:Foo
+zeroc	base/thread/test/WeakCallback_test.cc	/^void Foo::zeroc() const$/;"	f	class:Foo
+~Condition	base/thread/Condition.h	/^  ~Condition()$/;"	f	class:Happy::Condition
+~Destruct	base/thread/test/Singleton_test.cc	/^  ~Destruct()$/;"	f	class:Destruct
+~EventLoop	net/EventLoop.cc	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
+~Exception	base/thread/Exception.cc	/^Exception::~Exception() throw ()$/;"	f	class:Exception
+~GlobalObject	base/thread/test/ExitDeadLock.cc	/^  ~GlobalObject()$/;"	f	class:GlobalObject
+~MutexLock	base/thread/Mutex.h	/^  ~MutexLock()$/;"	f	class:Happy::MutexLock
+~MutexLockGuard	base/thread/Mutex.h	/^  ~MutexLockGuard()$/;"	f	class:Happy::MutexLockGuard
+~Observer	base/thread/test/Observer.cc	/^Observer::~Observer()$/;"	f	class:Observer
+~Observer	base/thread/test/Observer_safe.cc	/^Observer::~Observer()$/;"	f	class:Observer
+~Poller	net/Poller.cc	/^Poller::~Poller()$/;"	f	class:Poller
+~Request	base/thread/test/MutualDeadLock.cc	/^  ~Request() __attribute__ ((noinline))$/;"	f	class:Request
+~Request	base/thread/test/RequestInventory_test.cc	/^  ~Request() __attribute__ ((noinline))$/;"	f	class:Request
+~Request	base/thread/test/RequestInventory_test2.cc	/^  ~Request()$/;"	f	class:Request
+~Signal	base/thread/SignalSlot.h	/^  ~Signal()$/;"	f	class:muduo::Signal
+~SlotImpl	base/thread/SignalSlot.h	/^  ~SlotImpl()$/;"	f	struct:muduo::detail::SlotImpl
+~Socket	net/Socket.cc	/^Socket::~Socket()$/;"	f	class:Socket
+~Socket	net/Socket/Socket.cc	/^Socket::~Socket()$/;"	f	class:Socket
+~Stock	base/thread/test/Factory.cc	/^  ~Stock()$/;"	f	class:Stock
+~Stock	base/thread/test/Factory_deadlock.cc	/^  ~Stock()$/;"	f	class:Stock
+~Stock	base/thread/test/Factory_racecondition.cc	/^  ~Stock()$/;"	f	class:Stock
+~Test	base/thread/test/SingletonThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/thread/test/Singleton_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/thread/test/ThreadLocalSingleton_test.cc	/^  ~Test()$/;"	f	class:Test
+~Test	base/thread/test/ThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+~Thread	base/thread/Thread.cc	/^Thread::~Thread()$/;"	f	class:Thread
+~ThreadLocal	base/thread/ThreadLocal.h	/^  ~ThreadLocal()$/;"	f	class:Happy::ThreadLocal
+~ThreadPool	base/ThreadPool/ThreadPool.hpp	/^    ~ThreadPool(void)$/;"	f	class:ThreadPool
+~ThreadPool	base/thread/ThreadPool.cc	/^ThreadPool::~ThreadPool()$/;"	f	class:ThreadPool
+~Waiter	base/thread/test/Waiter_test.cc	/^  ~Waiter()$/;"	f	class:Waiter
