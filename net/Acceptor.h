@@ -37,7 +37,7 @@ private:
     EventLoop * loop_;    //每个Acceptor属于一个Eventloop
     Socket acceptSocket_; //Socket,其为Server Socket
     Channel acceptChannel_;//一个Channel,负责管理Server Socket
-    NewConnectionCallback newConnectionCallback_;
+    NewConnectionCallback newConnectionCallback_; //出现新链接时的回调,供TcpServer new connection使用
     bool listenning_;
 };
 

@@ -36,11 +36,12 @@ void Acceptor::listen() //调用listen函数监听本机Socket
 }
 
 
-void Acceptor::handleRead()//作为Channel的回调,当Sockets出现可读清空下进行Acceptor
+void Acceptor::handleRead()//作为Channel的回调,当Sockets出现新连接的情况下进行Acceptor
 {
     loop_->assertInLoopThread();
     InetAddress peerAddr(0);
     int connfd = acceptSocket_.accept(&peerAddr);
+    //创建新的TcpConnection
     if (connfd >= 0) {
         if (newConnectionCallback_) {
             newConnectionCallback_(connfd, peerAddr);

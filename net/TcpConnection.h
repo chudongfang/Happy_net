@@ -9,31 +9,31 @@
 #define _TCPCONNECTION_H
 
 #include"InetAddress.h"
+#include"Callbacks.h"
 
 #include<boost/any.hpp>
 #include<boost/enable_shared_from_this.hpp>
 #include<boost/scoped_ptr.hpp>
 #include<boost/shared_ptr.hpp>
 #include<functional>
-
+#include<boost/noncopyable.hpp>
+#include<string>
 
 namespace Happy
 {
+
 class Channel;
 class EventLoop;
 class Socket;
 
 
-class TcpConnection 
+class TcpConnection : boost::noncopyable,
+                      public boost::enable_shared_from_this<TcpConnection>
 {
 public:
-    typedef function<void (const TcpConnectionPtr&)> ConnectionCallback;
-    typedef function<void (const TcpConnectionPtr&,
-                              const char* data,
-                              ssize_t len)> MessageCallback;
     
     TcpConnection(EventLoop* loop,
-                  const std::string& name;
+                  const std::string& name,
                   int sockfd,
                   const InetAddress& localAddr,
                   const InetAddress& peerAddr);
@@ -44,7 +44,7 @@ public:
     const std::string& name() const { return name_; }
     const InetAddress& localAddress() {return localAddr_; }
     const InetAddress& peerAddress()  { return peerAddr_; }
-    bool connected() const { return state_ == kConneted; }
+    bool connected() const { return state_ == kConnected; }
     
     void setConnectionCallback(const ConnectionCallback& Callback)
     {
@@ -61,9 +61,12 @@ public:
 
 
 private:
-    enum StateE{ kConneting, kConneted, };
+    
+    //int kConneting = 0;
+    //int kConneted  = 1;
+    enum StateE{ kConnecting, kConnected, };
 
-    void setState(StateE s) {  }
+    void setState(StateE s) {state_ = s;  }
     void handleRead();
 
     EventLoop * loop_;
@@ -75,14 +78,12 @@ private:
     InetAddress peerAddr_;  //客户端地址
     ConnectionCallback connectionCallback_;
     MessageCallback    messageCallback_;
-    
 
 };
     
+
 typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;
-
-
-
+//FIXME use C++11
 
 
 }
