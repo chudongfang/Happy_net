@@ -56,9 +56,15 @@ public:
         messageCallback_  = Callback;
     }
 
-    //只能调用一次
-    void connectEstablished();
+    void setCloseCallback(const CloseCallback& Callback) //设置关闭回调
+    {
+        closeCallback_ = Callback;
+    }
 
+    //只能调用一次
+    void connectEstablished(); //建立链接
+    void connectDestroyed();   //销毁链接
+    
 
 private:
     
@@ -67,7 +73,12 @@ private:
     enum StateE{ kConnecting, kConnected, };
 
     void setState(StateE s) {state_ = s;  }
+    
     void handleRead();
+    void handleWrite();
+    void handleClose();
+    void handleError();
+
 
     EventLoop * loop_;
     std::string name_;
@@ -76,8 +87,10 @@ private:
     boost::scoped_ptr<Channel> channel_;
     InetAddress localAddr_; //本机地址
     InetAddress peerAddr_;  //客户端地址
+    //回调
     ConnectionCallback connectionCallback_;
     MessageCallback    messageCallback_;
+    CloseCallback      closeCallback_;
 
 };
     

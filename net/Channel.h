@@ -20,8 +20,13 @@ class Channel
 public:
     typedef boost::function<void()> EventCallback; //回调函数
     Channel(EventLoop * loop,int fd);
-    
+   
+    ~Channel();//析构
+
+
+    //最重要的函数,用来调配回调函数
     void handleEvent();
+
     
     //获取变量值 
     int fd() const {return fd_;}
@@ -41,6 +46,10 @@ public:
     void setErrorCallback(const EventCallback& cb)
     {errorCallback_ = cb; }
     
+    void setCloseCallback(const EventCallback& Callback) //设置关闭链接回调
+    {
+        closeCallback_ = Callback;
+    }
     //修改fd为可读
     void enableReading() { events_ |= kReadEvent; update(); }
     
@@ -63,11 +72,13 @@ private:
     
     // 定义一些回调函数
     
-    
+    bool IsHandling_; 
     EventCallback readCallback_;
     EventCallback writeCallback_;
     EventCallback errorCallback_;
-
+    
+    EventCallback closeCallback_;// 关闭链接回调
+    
 };
 
 

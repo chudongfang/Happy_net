@@ -9,6 +9,7 @@
 #include"Channel.h"
 #include"EventLoop.h"
 #include"Socket.h"
+#include"Socket_Base.h"
 
 #include<iostream>
 #include<cerrno>
@@ -34,7 +35,12 @@ TcpConnection::TcpConnection(EventLoop* loop,
 
     //设置读数据回调,当有数据出现时读数据
     channel_->setReadCallback(
-        boost::bind(&TcpConnection::handleRead,this));
+        boost::bind(&TcpConnection::handleRead, this));
+    channel_->setCloseCallback(
+        boost::bind(&TcpConnection::handleClose, this));
+    channel_->setErrorCallback(
+        boost::bind(&TcpConnection::handleError, this));
+
 }
 
 
@@ -56,19 +62,64 @@ void TcpConnection::connectEstablished()
     connectionCallback_(shared_from_this());
 }
 
+//建立链接
+void TcpConnection::connectDestroyed()
+{
+    loop_->assertInLoopThread();
+    assert(state_ == kConnected);
+    setState(kDisconnected);
+    channel_->disableAll();
+    connectionCallback_(shared_from_this());
 
+    loop->removeChannel(get_pointer(channel_));
+}
+
+
+
+//当epoll产生读数据时的回调
+//当链接断开时,则调用handleClose
 void TcpConnection::handleRead()
 {
     //读取数据
     char buff[65536];
     ssize_t n = ::read(channel_->fd(),buff,sizeof(buff));
-    messageCallback_(shared_from_this(),buff,n);
-    //FIXME :close connection if n == 0
+    if( n > 0 )
+    {
+        messageCallback_(shared_from_this(),buff,n);
+    }
+    else if(n == 0)
+    {
+        handleClose();
+    }
+    else
+    {
+        handleError();
+    }
+}
+
+void TcpConnection::handleWrite()
+{
+
 }
 
 
+//关闭TcpConnection
+void TcpConnection::handleClose()
+{
+    loop_->assertInLoopThread();
+    
+    assert(state_ == kConnected);
+    channel_->disableAll();
+
+    closeCallback_(shared_from_this());
+}
 
 
+//error回调
+void TcpConnection::handleError()
+{
+    ;
+}
 
 
 

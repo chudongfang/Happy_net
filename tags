@@ -47,6 +47,7 @@ Channel	net/Channel.h	/^class Channel$/;"	c	namespace:Happy
 ChannelList	net/EventLoop.h	/^    typedef std::vector<Channel*> ChannelList; \/\/存储Channel$/;"	t	class:Happy::EventLoop
 ChannelList	net/Poller.h	/^    typedef std::vector<Channel*> ChannelList;$/;"	t	class:Happy::Poller
 ChannelMap	net/Poller.h	/^    typedef std::map<int , Channel*> ChannelMap;$/;"	t	class:Happy::Poller
+CloseCallback	net/Callbacks.h	/^typedef std::function<void (const TcpConnectionPtr&)> CloseCallback;$/;"	t	namespace:Happy
 Condition	base/thread/Condition.h	/^  explicit Condition(MutexLock& mutex) : mutex_(mutex)$/;"	f	class:Happy::Condition
 Condition	base/thread/Condition.h	/^class Condition : boost::noncopyable$/;"	c	namespace:Happy
 ConnectionCallback	net/Callbacks.h	/^typedef std::function<void (const TcpConnectionPtr&)> ConnectionCallback;$/;"	t	namespace:Happy
@@ -128,6 +129,7 @@ Inventory	base/thread/test/RequestInventory_test.cc	/^  Inventory()$/;"	f	class:
 Inventory	base/thread/test/RequestInventory_test.cc	/^class Inventory$/;"	c	file:
 Inventory	base/thread/test/RequestInventory_test2.cc	/^  Inventory()$/;"	f	class:Inventory
 Inventory	base/thread/test/RequestInventory_test2.cc	/^class Inventory$/;"	c	file:
+IsHandling_	net/Channel.h	/^    bool IsHandling_; $/;"	m	class:Happy::Channel
 Iterator	base/thread/test/Observer_safe.cc	/^  typedef std::vector<boost::weak_ptr<Observer> >::iterator Iterator;$/;"	t	class:Observable	file:
 LDFLAGS	base/ThreadPool/Makefile	/^LDFLAGS = -lpthread$/;"	m
 LDFLAGS	base/thread1/Makefile	/^LDFLAGS = -lpthread$/;"	m
@@ -344,6 +346,8 @@ channels_	net/Poller.h	/^    ChannelMap channels_;    \/\/fd 与 channel对应$/
 clean	base/thread/SignalSlot.h	/^  void clean()$/;"	f	struct:muduo::detail::SignalImpl
 close	net/Socket/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
 close	net/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
+closeCallback_	net/Channel.h	/^    EventCallback closeCallback_;\/\/ 关闭链接回调$/;"	m	class:Happy::Channel
+closeCallback_	net/TcpConnection.h	/^    CloseCallback      closeCallback_;$/;"	m	class:Happy::TcpConnection
 cond_	base/thread/ThreadPool.h	/^  Condition cond_;$/;"	m	class:Happy::ThreadPool
 cond_	base/thread/test/Waiter_test.cc	/^  muduo::Condition cond_;$/;"	m	class:WaiterInMuduo	file:
 cond_	base/thread/test/Waiter_test.cc	/^  pthread_cond_t cond_;$/;"	m	class:Waiter	file:
@@ -351,6 +355,7 @@ condition_	base/thread/CountDownLatch.h	/^  Condition condition_;$/;"	m	class:mu
 connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func)$/;"	f	class:muduo::Signal
 connect	base/thread/SignalSlot.h	/^  Slot connect(Callback&& func, const boost::shared_ptr<void>& tie)$/;"	f	class:muduo::Signal
 connect	base/thread/SignalSlotTrivial.h	/^  void connect(Functor&& func)$/;"	f	class:SignalTrivial
+connectDestroyed	net/TcpConnection.cc	/^void TcpConnection::connectDestroyed()$/;"	f	class:TcpConnection
 connectEstablished	net/TcpConnection.cc	/^void TcpConnection::connectEstablished()$/;"	f	class:TcpConnection
 connected	net/TcpConnection.h	/^    bool connected() const { return state_ == kConnected; }$/;"	f	class:Happy::TcpConnection
 connectionCallback_	net/TcpConnection.h	/^    ConnectionCallback connectionCallback_;$/;"	m	class:Happy::TcpConnection
@@ -439,10 +444,13 @@ getString	base/thread/test/WeakCallback_test.cc	/^String getString()$/;"	f
 getString	base/thread/test/destruct.cc	/^string getString()$/;"	f
 gettid	base/thread/Thread.cc	/^pid_t gettid()$/;"	f	namespace:__anon1
 gettid	base/thread1/CurrentThread.cc	/^pid_t gettid()$/;"	f	namespace:__anon2
+handleClose	net/TcpConnection.cc	/^void TcpConnection::handleClose()$/;"	f	class:TcpConnection
+handleError	net/TcpConnection.cc	/^void TcpConnection::handleError()$/;"	f	class:TcpConnection
 handleEvent	net/Channel.cc	/^void Channel::handleEvent()$/;"	f	class:Channel
 handleRead	net/Acceptor.cc	/^void Acceptor::handleRead()\/\/作为Channel的回调,当Sockets出现新连接的情况下进行Acceptor$/;"	f	class:Acceptor
 handleRead	net/EventLoop.cc	/^void EventLoop::handleRead()$/;"	f	class:EventLoop
 handleRead	net/TcpConnection.cc	/^void TcpConnection::handleRead()$/;"	f	class:TcpConnection
+handleWrite	net/TcpConnection.cc	/^void TcpConnection::handleWrite()$/;"	f	class:TcpConnection
 holder_	base/thread/Mutex.h	/^  pid_t holder_;$/;"	m	class:Happy::MutexLock
 hostToNetwork16	net/Socket/Socket_Base.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:Happy::sockets
 hostToNetwork16	net/Socket_Base.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:Happy::sockets
@@ -719,6 +727,8 @@ runInThread	base/thread/ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	cla
 runServer	base/thread/test/Waiter_test.cc	/^void runServer(Waiter* waiter, int sec)$/;"	f
 running_	base/ThreadPool/ThreadPool.hpp	/^    std::atomic_bool running_;$/;"	m	class:ThreadPool
 running_	base/thread/ThreadPool.h	/^  bool running_;$/;"	m	class:Happy::ThreadPool
+setCloseCallback	net/Channel.h	/^    void setCloseCallback(const EventCallback& Callback) \/\/设置关闭链接回调$/;"	f	class:Happy::Channel
+setCloseCallback	net/TcpConnection.h	/^    void setCloseCallback(const CloseCallback& Callback) \/\/设置关闭回调$/;"	f	class:Happy::TcpConnection
 setConnectionCallback	net/TcpConnection.h	/^    void setConnectionCallback(const ConnectionCallback& Callback)$/;"	f	class:Happy::TcpConnection
 setConnectionCallback	net/TcpServer.h	/^    void setConnectionCallback(const ConnectionCallback& Callback)$/;"	f	class:Happy::TcpServer
 setErrorCallback	net/Channel.h	/^    void setErrorCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
@@ -875,6 +885,7 @@ zero	base/thread/test/SignalSlot_test.cc	/^void Foo::zero()$/;"	f	class:Foo
 zero	base/thread/test/WeakCallback_test.cc	/^void Foo::zero()$/;"	f	class:Foo
 zeroc	base/thread/test/SignalSlot_test.cc	/^void Foo::zeroc() const$/;"	f	class:Foo
 zeroc	base/thread/test/WeakCallback_test.cc	/^void Foo::zeroc() const$/;"	f	class:Foo
+~Channel	net/Channel.cc	/^Channel::~Channel()$/;"	f	class:Channel
 ~Condition	base/thread/Condition.h	/^  ~Condition()$/;"	f	class:Happy::Condition
 ~Destruct	base/thread/test/Singleton_test.cc	/^  ~Destruct()$/;"	f	class:Destruct
 ~EventLoop	net/EventLoop.cc	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
