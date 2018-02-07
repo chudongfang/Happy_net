@@ -210,7 +210,7 @@ Socket	net/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Socket	net/Socket/Socket.h	/^    explicit Socket(int sockfd)$/;"	f	class:Happy::Socket
 Socket	net/Socket/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Start	base/ThreadPool/ThreadPool.hpp	/^    void Start(int numThreads)$/;"	f	class:ThreadPool
-StateE	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected, };$/;"	g	class:Happy::TcpConnection
+StateE	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	g	class:Happy::TcpConnection
 Stock	base/thread/test/Factory.cc	/^  Stock(const string& name)$/;"	f	class:Stock
 Stock	base/thread/test/Factory.cc	/^class Stock : boost::noncopyable$/;"	c	file:
 Stock	base/thread/test/Factory_deadlock.cc	/^  Stock(const string& name)$/;"	f	class:Stock
@@ -342,7 +342,7 @@ cancel	base/thread/test/RequestInventory_test2.cc	/^  void cancel() __attribute_
 capacity	base/thread/BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
 cb_	base/thread/SignalSlot.h	/^  Callback cb_;$/;"	m	struct:muduo::detail::SlotImpl
 channel_	net/TcpConnection.h	/^    boost::scoped_ptr<Channel> channel_;$/;"	m	class:Happy::TcpConnection
-channels_	net/Poller.h	/^    ChannelMap channels_;    \/\/fd 与 channel对应$/;"	m	class:Happy::Poller
+channels_	net/Poller.h	/^    ChannelMap   channels_;    \/\/fd 与 channel对应$/;"	m	class:Happy::Poller
 clean	base/thread/SignalSlot.h	/^  void clean()$/;"	f	struct:muduo::detail::SignalImpl
 close	net/Socket/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
 close	net/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
@@ -382,6 +382,7 @@ destructor	base/thread/ThreadLocal.h	/^  static void destructor(void *x)$/;"	f	c
 detail	base/thread/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
 detail	base/thread/SignalSlot.h	/^namespace detail$/;"	n	namespace:muduo
 detail	base/thread1/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
+disableAll	net/Channel.h	/^    void disableAll() { events_ = kNoneEvent; update(); }$/;"	f	class:Happy::Channel
 doPendingFunctors	net/EventLoop.cc	/^void EventLoop::doPendingFunctors()$/;"	f	class:EventLoop
 doit	base/thread/test/CopyOnWrite_test.cc	/^void Foo::doit() const$/;"	f	class:Foo
 doit	base/thread/test/ExitDeadLock.cc	/^  void doit()$/;"	f	class:GlobalObject
@@ -459,6 +460,7 @@ hostToNetwork32	net/Socket_Base.h	/^inline uint32_t hostToNetwork32(uint32_t hos
 hostToNetwork64	net/Socket/Socket_Base.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:Happy::sockets
 hostToNetwork64	net/Socket_Base.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:Happy::sockets
 impl_	base/thread/SignalSlot.h	/^  const boost::shared_ptr<SignalImpl> impl_;$/;"	m	class:muduo::Signal
+implicit_cast	net/Poller.h	/^    inline To implicit_cast(From const &f) {$/;"	f	class:Happy::Poller
 implicit_cast	net/Socket/Socket_Base.cc	/^inline To implicit_cast(From const &f) {$/;"	f
 implicit_cast	net/Socket_Base.cc	/^inline To implicit_cast(From const &f) {$/;"	f
 increment	base/thread/Atomic.h	/^  void increment()$/;"	f	class:Happy::detail::AtomicIntegerT
@@ -482,8 +484,9 @@ joinAll	base/thread/test/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Te
 joinAll	base/thread/test/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
 joined_	base/thread/Thread.h	/^  bool        joined_;$/;"	m	class:Happy::Thread
 joined_	base/thread1/Thread.h	/^    bool joined_;$/;"	m	class:Happy::Thread
-kConnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected, };$/;"	e	enum:Happy::TcpConnection::StateE
-kConnecting	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected, };$/;"	e	enum:Happy::TcpConnection::StateE
+kConnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
+kConnecting	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
+kDisconnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
 kInaddrAny	net/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kInaddrAny	net/Socket/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kNoneEvent	net/Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
@@ -713,6 +716,9 @@ register_	base/thread/test/Observer_safe.cc	/^void Observable::register_(boost::
 remove	base/thread/test/MutualDeadLock.cc	/^  void remove(Request* req) __attribute__ ((noinline))$/;"	f	class:Inventory
 remove	base/thread/test/RequestInventory_test.cc	/^  void remove(Request* req) \/\/ __attribute__ ((noinline))$/;"	f	class:Inventory
 remove	base/thread/test/RequestInventory_test2.cc	/^  void remove(const RequestPtr& req) \/\/ __attribute__ ((noinline))$/;"	f	class:Inventory
+removeChannel	net/EventLoop.cc	/^void EventLoop::removeChannel(Channel* channel)$/;"	f	class:EventLoop
+removeChannel	net/Poller.cc	/^void Poller::removeChannel(Channel* channel)$/;"	f	class:Poller
+removeConnection	net/TcpServer.cc	/^void TcpServer::removeConnection(const TcpConnectionPtr& conn)$/;"	f	class:TcpServer
 removeStock	base/thread/test/Factory.cc	/^  void removeStock(Stock* stock)$/;"	f	class:StockFactory	file:
 requests_	base/thread/test/MutualDeadLock.cc	/^  std::set<Request*> requests_;$/;"	m	class:Inventory	file:
 requests_	base/thread/test/RequestInventory_test.cc	/^  RequestListPtr requests_;$/;"	m	class:Inventory	file:

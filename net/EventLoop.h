@@ -45,6 +45,9 @@ public:
     //
 
     void updateChannel(Channel* channel);
+
+    //删除Channel 用来断开链接
+    void removeChannel(Channel* channel); 
     
     void assertInLoopThread()
     {

@@ -103,6 +103,20 @@ void EventLoop::updateChannel(Channel * channel )
     poller_ -> updateChannel(channel);
 }
 
+
+//删除Channel,调用Poller 中的removeChannel
+void EventLoop::removeChannel(Channel* channel)
+{
+    assert(channel->ownerLoop() == this);
+    assertInLoopThread();
+    poller_->removeChannel(channel);
+}
+
+
+
+
+
+
 void EventLoop::abortNotInLoopThread()
 {
     std::cout<<threadId_<<" "<<CurrentThread::tid()<<std::endl;

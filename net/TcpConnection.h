@@ -70,7 +70,7 @@ private:
     
     //int kConneting = 0;
     //int kConneted  = 1;
-    enum StateE{ kConnecting, kConnected, };
+    enum StateE{ kConnecting, kConnected,kDisconnected, };
 
     void setState(StateE s) {state_ = s;  }
     

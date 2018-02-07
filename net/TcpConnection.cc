@@ -34,6 +34,7 @@ TcpConnection::TcpConnection(EventLoop* loop,
     std::cout <<"Create TcpConnection"<<"name: "<<name_<<" at "<<this <<" fd = "<<channel_->fd()<<std::endl;
 
     //设置读数据回调,当有数据出现时读数据
+    //FIXME use std C++11
     channel_->setReadCallback(
         boost::bind(&TcpConnection::handleRead, this));
     channel_->setCloseCallback(
@@ -62,7 +63,8 @@ void TcpConnection::connectEstablished()
     connectionCallback_(shared_from_this());
 }
 
-//建立链接
+//删除TcpConnection
+//用在TcpServer , 供runInLoop调用
 void TcpConnection::connectDestroyed()
 {
     loop_->assertInLoopThread();
@@ -70,8 +72,7 @@ void TcpConnection::connectDestroyed()
     setState(kDisconnected);
     channel_->disableAll();
     connectionCallback_(shared_from_this());
-
-    loop->removeChannel(get_pointer(channel_));
+    loop_->removeChannel(get_pointer(channel_));
 }
 
 
@@ -110,7 +111,6 @@ void TcpConnection::handleClose()
     
     assert(state_ == kConnected);
     channel_->disableAll();
-
     closeCallback_(shared_from_this());
 }
 

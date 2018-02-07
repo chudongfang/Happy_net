@@ -74,15 +74,26 @@ void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
     //加入到Map映射
     connections_[connName] = conn; 
    
-    //设置回调
+    //设置回调,这些回调会传给TcpConnection ,然后TcpConnection会传给Channel,然后对事件进行响应
     conn->setConnectionCallback(connectionCallback_);
     conn->setMessageCallback(messageCallback_);
+    conn->setCloseCallback(
+        boost::bind(&TcpServer::removeConnection, this,_1));
 
     conn->connectEstablished();
-
 }
 
 
+//删除TcpConnection
+void TcpServer::removeConnection(const TcpConnectionPtr& conn)
+{
+    loop_->assertInLoopThread();
+    
+    size_t n = connections_.erase(conn->name());
+    assert(n==1);
+    loop_->queueInLoop(
+        boost::bind(&TcpConnection::connectDestroyed,conn));
+}
 
 
 

@@ -24,6 +24,11 @@ class Poller
 {
 public :
     typedef std::vector<Channel*> ChannelList;
+    
+    template<typename To, typename From>
+    inline To implicit_cast(From const &f) {
+        return f;
+    }
 
     Poller(EventLoop * loop);
     ~Poller();
@@ -31,6 +36,11 @@ public :
     int poll(int timeoutMs, ChannelList * activeChannels);
 
     void updateChannel(Channel * channel);
+    
+    //删除Channel
+    void removeChannel(Channel* channel);
+
+
     void assertInLoopThread() {ownerLoop_ -> assertInLoopThread();}
 
 private:
@@ -40,7 +50,7 @@ private:
     typedef std::map<int , Channel*> ChannelMap;
     EventLoop *  ownerLoop_; // 其对应的EvenLoop
     PollFdList   pollfds_;   //存储fd
-    ChannelMap channels_;    //fd 与 channel对应
+    ChannelMap   channels_;    //fd 与 channel对应
 
 };
     
