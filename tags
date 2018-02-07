@@ -210,7 +210,7 @@ Socket	net/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Socket	net/Socket/Socket.h	/^    explicit Socket(int sockfd)$/;"	f	class:Happy::Socket
 Socket	net/Socket/Socket.h	/^class Socket $/;"	c	namespace:Happy
 Start	base/ThreadPool/ThreadPool.hpp	/^    void Start(int numThreads)$/;"	f	class:ThreadPool
-StateE	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	g	class:Happy::TcpConnection
+StateE	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };$/;"	g	class:Happy::TcpConnection
 Stock	base/thread/test/Factory.cc	/^  Stock(const string& name)$/;"	f	class:Stock
 Stock	base/thread/test/Factory.cc	/^class Stock : boost::noncopyable$/;"	c	file:
 Stock	base/thread/test/Factory_deadlock.cc	/^  Stock(const string& name)$/;"	f	class:Stock
@@ -383,12 +383,14 @@ detail	base/thread/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
 detail	base/thread/SignalSlot.h	/^namespace detail$/;"	n	namespace:muduo
 detail	base/thread1/Atomic.h	/^namespace detail$/;"	n	namespace:Happy
 disableAll	net/Channel.h	/^    void disableAll() { events_ = kNoneEvent; update(); }$/;"	f	class:Happy::Channel
+disableWriting	net/Channel.h	/^    void disableWriting() { events_ &= ~kWriteEvent; update(); }$/;"	f	class:Happy::Channel
 doPendingFunctors	net/EventLoop.cc	/^void EventLoop::doPendingFunctors()$/;"	f	class:EventLoop
 doit	base/thread/test/CopyOnWrite_test.cc	/^void Foo::doit() const$/;"	f	class:Foo
 doit	base/thread/test/ExitDeadLock.cc	/^  void doit()$/;"	f	class:GlobalObject
 doit	base/thread/test/NonRecursiveMutex_test.cc	/^void Foo::doit() const$/;"	f	class:Foo
 empty	base/thread/BoundedBlockingQueue.h	/^  bool empty() const$/;"	f	class:muduo::BoundedBlockingQueue
 enableReading	net/Channel.h	/^    void enableReading() { events_ |= kReadEvent; update(); }$/;"	f	class:Happy::Channel
+enableWriting	net/Channel.h	/^    void enableWriting() { events_ |= kWriteEvent; update(); }$/;"	f	class:Happy::Channel
 errorCallback_	net/Channel.h	/^    EventCallback errorCallback_;$/;"	m	class:Happy::Channel
 events	net/Channel.h	/^    int events() const {return events_; }$/;"	f	class:Happy::Channel
 events_	net/Channel.h	/^    int        events_;$/;"	m	class:Happy::Channel
@@ -479,14 +481,16 @@ isLockedByThisThread	base/thread/Mutex.h	/^  bool isLockedByThisThread()$/;"	f	c
 isMainThread	base/thread/Thread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
 isMainThread	base/thread1/CurrentThread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
 isNoneEvent	net/Channel.h	/^    bool isNoneEvent() const {return events_ == kNoneEvent;}$/;"	f	class:Happy::Channel
+isWriting	net/Channel.h	/^    bool isWriting() const { return events_ & kWriteEvent; }$/;"	f	class:Happy::Channel
 join	base/thread/Thread.cc	/^void Thread::join()$/;"	f	class:Thread
 joinAll	base/thread/test/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
 joinAll	base/thread/test/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
 joined_	base/thread/Thread.h	/^  bool        joined_;$/;"	m	class:Happy::Thread
 joined_	base/thread1/Thread.h	/^    bool joined_;$/;"	m	class:Happy::Thread
-kConnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
-kConnecting	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
-kDisconnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected, };$/;"	e	enum:Happy::TcpConnection::StateE
+kConnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };$/;"	e	enum:Happy::TcpConnection::StateE
+kConnecting	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };$/;"	e	enum:Happy::TcpConnection::StateE
+kDisconnected	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };$/;"	e	enum:Happy::TcpConnection::StateE
+kDisconnecting	net/TcpConnection.h	/^    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };$/;"	e	enum:Happy::TcpConnection::StateE
 kInaddrAny	net/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kInaddrAny	net/Socket/InetAddress.cc	/^static const in_addr_t kInaddrAny  = INADDR_ANY;$/;"	m	namespace:Happy	file:
 kNoneEvent	net/Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
@@ -551,7 +555,6 @@ main	net/test/test1.cc	/^int main()$/;"	f
 main	net/test/test2.cc	/^int main()$/;"	f
 main	net/test/test_Acceptor.cc	/^int main()$/;"	f
 main	net/test/test_client.cc	/^int main(int argc, char const *argv[])$/;"	f
-main	net/test_Acceptor.cc	/^int main()$/;"	f
 main	net/test_TcpServer.cc	/^int main()$/;"	f
 main	net/test_client.cc	/^int main(int argc, char const *argv[])$/;"	f
 makeWeakCallback	base/thread/WeakCallback.h	/^WeakCallback<CLASS, ARGS...> makeWeakCallback(const std::shared_ptr<CLASS>& object,$/;"	f	namespace:muduo
@@ -633,7 +636,6 @@ networkToHost64	net/Socket/Socket_Base.h	/^inline uint64_t networkToHost64(uint6
 networkToHost64	net/Socket_Base.h	/^inline uint64_t networkToHost64(uint64_t net64)$/;"	f	namespace:Happy::sockets
 newConnection	net/TcpServer.cc	/^void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)$/;"	f	class:TcpServer
 newConnection	net/test/test_Acceptor.cc	/^void newConnection(int sockfd, const Happy::InetAddress& peerAddr)$/;"	f
-newConnection	net/test_Acceptor.cc	/^void newConnection(int sockfd, const Happy::InetAddress& peerAddr)$/;"	f
 newConnectionCallback_	net/Acceptor.h	/^    NewConnectionCallback newConnectionCallback_; \/\/出现新链接时的回调,供TcpServer new connection使用$/;"	m	class:Happy::Acceptor
 nextConnId_	net/TcpServer.h	/^    int nextConnId_;$/;"	m	class:Happy::TcpServer
 notEmpty_	base/ThreadPool/SyncQueue.hpp	/^    std::condition_variable notEmpty_; \/\/非空条件变量$/;"	m	class:SyncQueue
@@ -733,6 +735,8 @@ runInThread	base/thread/ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	cla
 runServer	base/thread/test/Waiter_test.cc	/^void runServer(Waiter* waiter, int sec)$/;"	f
 running_	base/ThreadPool/ThreadPool.hpp	/^    std::atomic_bool running_;$/;"	m	class:ThreadPool
 running_	base/thread/ThreadPool.h	/^  bool running_;$/;"	m	class:Happy::ThreadPool
+send	net/TcpConnection.cc	/^void TcpConnection::send(const std::string&  message)$/;"	f	class:TcpConnection
+sendInLoop	net/TcpConnection.cc	/^void TcpConnection::sendInLoop(const std::string& message)$/;"	f	class:TcpConnection
 setCloseCallback	net/Channel.h	/^    void setCloseCallback(const EventCallback& Callback) \/\/设置关闭链接回调$/;"	f	class:Happy::Channel
 setCloseCallback	net/TcpConnection.h	/^    void setCloseCallback(const CloseCallback& Callback) \/\/设置关闭回调$/;"	f	class:Happy::TcpConnection
 setConnectionCallback	net/TcpConnection.h	/^    void setConnectionCallback(const ConnectionCallback& Callback)$/;"	f	class:Happy::TcpConnection
@@ -756,6 +760,10 @@ setState	net/TcpConnection.h	/^    void setState(StateE s) {state_ = s;  }$/;"	f
 setWriteCallback	net/Channel.h	/^    void setWriteCallback(const EventCallback& cb)$/;"	f	class:Happy::Channel
 set_index	net/Channel.h	/^    void set_index(int idx) {index_ = idx;} $/;"	f	class:Happy::Channel
 set_revents	net/Channel.h	/^    void set_revents(int revt) { revents_ = revt; }$/;"	f	class:Happy::Channel
+shutdown	net/TcpConnection.cc	/^void TcpConnection::shutdown()$/;"	f	class:TcpConnection
+shutdownInLoop	net/TcpConnection.cc	/^void TcpConnection::shutdownInLoop()$/;"	f	class:TcpConnection
+shutdownWrite	net/Socket.cc	/^void Socket::shutdownWrite()$/;"	f	class:Socket
+shutdownWrite	net/Socket_Base.cc	/^void sockets::shutdownWrite(int sockfd)$/;"	f	class:Happy::sockets
 sigalarm	base/thread/test/Waiter_test.cc	/^void sigalarm(int)$/;"	f
 signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter3	file:
 signaled_	base/thread/test/Waiter_test.cc	/^  bool signaled_ = false;$/;"	m	class:Waiter4	file:

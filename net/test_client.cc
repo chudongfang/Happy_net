@@ -13,6 +13,8 @@
 #include <signal.h>
 #include <time.h>
 #include <termios.h>  
+#include <iostream>
+using namespace std;
 
 typedef struct sockaddr SA;
 
@@ -30,6 +32,9 @@ int main(int argc, char const *argv[])
 	}
 	printf("客户端启动成功\n");
     send(sockfd,"lala",5,0) ;
+    char buff[10000];
+    recv(sockfd,buff,2048,0);
+    cout<<buff<<endl;  
 	return 0;
 }
 

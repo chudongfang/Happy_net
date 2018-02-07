@@ -49,6 +49,12 @@ void Socket::setReuseAddr(bool on)
 }
 
 
+void Socket::shutdownWrite()
+{
+    sockets::shutdownWrite(sockfd_);
+}
+
+
 
 
 

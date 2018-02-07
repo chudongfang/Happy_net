@@ -45,7 +45,9 @@ public:
     const InetAddress& localAddress() {return localAddr_; }
     const InetAddress& peerAddress()  { return peerAddr_; }
     bool connected() const { return state_ == kConnected; }
-    
+   
+
+
     void setConnectionCallback(const ConnectionCallback& Callback)
     {
         connectionCallback_ = Callback;
@@ -66,11 +68,18 @@ public:
     void connectDestroyed();   //销毁链接
     
 
+    //数据发送
+
+    void send(const std::string& message);
+    void shutdown();
+
+
+
 private:
     
     //int kConneting = 0;
     //int kConneted  = 1;
-    enum StateE{ kConnecting, kConnected,kDisconnected, };
+    enum StateE{ kConnecting, kConnected,kDisconnected,kDisconnecting, };
 
     void setState(StateE s) {state_ = s;  }
     
@@ -78,7 +87,9 @@ private:
     void handleWrite();
     void handleClose();
     void handleError();
-
+    
+    void sendInLoop(const std::string& message);
+    void shutdownInLoop();
 
     EventLoop * loop_;
     std::string name_;

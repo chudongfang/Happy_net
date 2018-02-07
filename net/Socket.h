@@ -31,9 +31,14 @@ public:
     int accept(InetAddress * peeraddr);
 
     void setReuseAddr(bool on);
+   
+    //关闭Socket
+    void shutdownWrite();
+
+
+
 private:
     const int sockfd_;
-
 
 
 };

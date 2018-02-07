@@ -31,6 +31,7 @@ void onMessage(const Happy::TcpConnectionPtr& conn,
     if(len==0) return ;
   printf("onMessage(): received %zd bytes from connection [%s]\n",
          len, conn->name().c_str());
+    conn->send("lalal~");
 }
 
 int main()

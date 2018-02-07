@@ -53,9 +53,17 @@ public:
     //修改fd为可读
     void enableReading() { events_ |= kReadEvent; update(); }
     
+    //修改状态为可写 
+    void enableWriting() { events_ |= kWriteEvent; update(); }
+    //修改状态为不可写
+    void disableWriting() { events_ &= ~kWriteEvent; update(); }
+
+
+
     //修改fd状态为0
     void disableAll() { events_ = kNoneEvent; update(); }
-    
+   
+    bool isWriting() const { return events_ & kWriteEvent; }
     bool isNoneEvent() const {return events_ == kNoneEvent;}
      
      

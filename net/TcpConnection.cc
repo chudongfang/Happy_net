@@ -68,7 +68,8 @@ void TcpConnection::connectEstablished()
 void TcpConnection::connectDestroyed()
 {
     loop_->assertInLoopThread();
-    assert(state_ == kConnected);
+
+    assert(state_ == kConnected || state_ == kDisconnecting);
     setState(kDisconnected);
     channel_->disableAll();
     connectionCallback_(shared_from_this());
@@ -123,6 +124,73 @@ void TcpConnection::handleError()
 
 
 
+//send为线程安全函数,首先判断其是否在本线程内,如果不在则调用runInLoop
+void TcpConnection::send(const std::string&  message)
+{
+    if(state_ == kConnected)
+    {
+        if(loop_->isInLoopThread())
+        {
+            sendInLoop(message);
+        }
+        else
+        {
+            loop_->runInLoop(
+                boost::bind(&TcpConnection::sendInLoop,this,message));
+        }
+    }
+}
+
+void TcpConnection::sendInLoop(const std::string& message)
+{
+    loop_->assertInLoopThread();
+    ssize_t numwrite = 0;
+
+    if(!channel_->isWriting())
+    {
+        numwrite = ::write(channel_->fd(),message.data(),message.size());
+        if(numwrite >= 0)
+        {
+            if(numwrite < message.size())
+            {
+                std::cout<<"I am going to write more data!"<<std::endl;
+            }
+            else 
+            {
+                //FIXME  dell with the error
+                numwrite = 0;
+                if(errno != EWOULDBLOCK)
+                {
+                    ;
+                }
+            }
+        }
+    }
+
+    //FIXME
+}
+
+
+void TcpConnection::shutdown()
+{
+    if(state_ == kConnected)
+    {
+        setState(kDisconnected);
+        loop_->runInLoop(
+            boost::bind(&TcpConnection::shutdownInLoop, this));
+    }
+}
+
+
+//在runInLoop中执行
+void TcpConnection::shutdownInLoop()
+{
+    loop_->assertInLoopThread();
+    if(!channel_->isWriting())
+    {
+        socket_->shutdownWrite();
+    }
+}
 
 
 

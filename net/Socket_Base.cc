@@ -141,6 +141,17 @@ void sockets::close(int sockfd)
   }
 }
 
+
+void sockets::shutdownWrite(int sockfd)
+{
+    if(::shutdown(sockfd,SHUT_WR) < 0 )
+    {
+        std::cout<<"sockets:: shutdownWrite "<<std::endl;
+    }
+
+}
+
+
 void sockets::toHostPort(char* buf, size_t size,
                          const struct sockaddr_in& addr)
 {
