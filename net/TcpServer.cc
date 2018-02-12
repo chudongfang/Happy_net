@@ -9,6 +9,7 @@
 #include"Acceptor.h"
 #include"EventLoop.h"
 #include"Socket_Base.h"
+#include<functional>
 
 #include<boost/bind.hpp>
 #include<stdio.h>
