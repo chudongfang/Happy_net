@@ -52,6 +52,4 @@ void Acceptor::handleRead()//作为Channel的回调,当Sockets出现新连接的
             sockets::close(connfd);
         }
     }
-  
-
 }

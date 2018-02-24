@@ -34,7 +34,6 @@ private:
     struct sockaddr_in addr_;
 
 
-
 };
 
 
