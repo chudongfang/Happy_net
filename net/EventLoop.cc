@@ -86,6 +86,9 @@ void EventLoop::loop()
     std::cout <<" Loop Stop "<<std::endl;
     looping_ = false;
 }
+
+
+
 void EventLoop::quit()
 {
     quit_ = true;
