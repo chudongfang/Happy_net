@@ -22,7 +22,7 @@ Acceptor::Acceptor(EventLoop* loop , const InetAddress& listenAddr)
 {
     acceptSocket_.setReuseAddr(true);
     acceptSocket_.bindAddress(listenAddr);//给本机Socket绑定地址
-    acceptChannel_.setReadCallback(
+    acceptChannel_.setReadCallback(       //设置回调，用来Accept 一个新的链接
         boost::bind(&Acceptor::handleRead, this));
 }
 
@@ -33,6 +33,7 @@ void Acceptor::listen() //调用listen函数监听本机Socket
     listenning_ = true;
     acceptSocket_.listen();
     acceptChannel_.enableReading();
+    //设置状态可读，然后update Channel ,把acceptSocket_添加至I/O复用 epoll/poll
 }
 
 
