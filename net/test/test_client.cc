@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
     
     //sleep(20);
 	printf("客户端启动成功\n");
-    //send(sockfd,"lala",5,0) ;
+    send(sockfd,"lala",5,0) ;
 	return 0;
 }
 

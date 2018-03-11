@@ -11,6 +11,7 @@
 
 void onConnection(const Happy::TcpConnectionPtr& conn)
 {
+    std::cout <<"接受到新链接，我是回调函数"<<std::endl;
   if (conn->connected())
   {
     printf("onConnection(): new connection [%s] from %s\n",
@@ -28,6 +29,7 @@ void onMessage(const Happy::TcpConnectionPtr& conn,
                const char* data,
                ssize_t len)
 {
+    std::cout <<"接受到信息，我是回调函数"<<std::endl;
     if(len==0) return ;
   printf("onMessage(): received %zd bytes from connection [%s]\n",
          len, conn->name().c_str());

@@ -346,7 +346,7 @@ callingPengdingFunctors_	net/EventLoop.h	/^    bool callingPengdingFunctors_;$/;
 cancel	base/thread/test/RequestInventory_test2.cc	/^  void cancel() __attribute__ ((noinline))$/;"	f	class:Request
 capacity	base/thread/BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
 cb_	base/thread/SignalSlot.h	/^  Callback cb_;$/;"	m	struct:muduo::detail::SlotImpl
-channel_	net/TcpConnection.h	/^    boost::scoped_ptr<Channel> channel_;$/;"	m	class:Happy::TcpConnection
+channel_	net/TcpConnection.h	/^    boost::scoped_ptr<Channel> channel_;\/\/Socket_对应的channel$/;"	m	class:Happy::TcpConnection
 channels_	net/Poller.h	/^    ChannelMap   channels_;    \/\/fd 与 channel对应$/;"	m	class:Happy::Poller
 clean	base/thread/SignalSlot.h	/^  void clean()$/;"	f	struct:muduo::detail::SignalImpl
 close	net/Socket/Socket_Base.cc	/^void sockets::close(int sockfd)$/;"	f	class:Happy::sockets
@@ -814,7 +814,7 @@ sockaddr_cast	net/Socket/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* 
 sockaddr_cast	net/Socket/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
 sockaddr_cast	net/Socket_Base.cc	/^SA* sockaddr_cast(struct sockaddr_in* addr)$/;"	f	namespace:Happy
 sockaddr_cast	net/Socket_Base.cc	/^const SA* sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	namespace:Happy
-socket_	net/TcpConnection.h	/^    boost::scoped_ptr<Socket> socket_;$/;"	m	class:Happy::TcpConnection
+socket_	net/TcpConnection.h	/^    boost::scoped_ptr<Socket> socket_;  \/\/对应客户端的socket ，Accept的socket值$/;"	m	class:Happy::TcpConnection
 sockets	net/Socket/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
 sockets	net/Socket_Base.h	/^namespace sockets$/;"	n	namespace:Happy
 sockfd_	net/Socket.h	/^    const int sockfd_;$/;"	m	class:Happy::Socket

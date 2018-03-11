@@ -39,7 +39,8 @@ public:
                   const InetAddress& peerAddr);
 
     ~TcpConnection();
-
+    
+    //loop_
     EventLoop* getLoop() const { return loop_; }
     const std::string& name() const { return name_; }
     const InetAddress& localAddress() {return localAddr_; }
@@ -94,8 +95,8 @@ private:
     EventLoop * loop_;
     std::string name_;
     StateE state_;
-    boost::scoped_ptr<Socket> socket_;
-    boost::scoped_ptr<Channel> channel_;
+    boost::scoped_ptr<Socket> socket_;  //对应客户端的socket ，Accept的socket值
+    boost::scoped_ptr<Channel> channel_;//Socket_对应的channel
     InetAddress localAddr_; //本机地址
     InetAddress peerAddr_;  //客户端地址
     //回调
