@@ -47,6 +47,7 @@ int  Poller::poll(int timeoutMs, ChannelList * activeChannels)
     }
     return 0;
 }
+
 //把相应的事件放入 activeChannels
 void Poller::fillActiveChannels(int numEvents,                    
                                ChannelList * activeChannels) const
